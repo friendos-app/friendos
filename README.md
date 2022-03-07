@@ -15,29 +15,38 @@ Creates a profile for a user based on hobbies they enjoy, and connects them with
 ### App Evaluation
 - **Category:** Social Networking / Hobbies
 - **Mobile:** This app would be primarily developed for mobile devices.
-- **Story:** Analyzes users' hobbies, and connects them to other users with similar choices. The user can then decide to message this person and befriend them if wanted.
+- **Story:** Analyzes users' hobbies, and connects them to other users with similar choices.
 - **Market:** Any individual 17+ could choose to use this app.
 - **Habit:** This app could be used as often or unoften as the user wanted depending on how deep their social life is, and what exactly they're looking for.
-- **Scope:** 
+- **Scope:** First we'll start with connecting people based on their interests, and then as we expand we can allow them to message each other within the app and increase customization options.
 
 ## Product Spec
 ### 1. User Stories (Required and Optional)
 
 **Required Must-have Stories**
+##Tier 1
 
-* User logs in to access previous chats and preference settings
-* User picks what their favorite artist/genre/etc. (Think Spotify interface)
-* Matches have a chat window to get to know each other, with the ability to skip music and unmatch (Tinder Style).
-* Profile pages for each user
-* Settings (Accesibility, Notification, General, etc.)
+* User logs into app via Facebook API authentication
+* User can edit profile screen, including adding interest and a bio
+* User can view their own bio
+* User can see a list of people using the app
+* User can view an individual person's profile, including bio and interests
+* User can add comments to a person's profile
+
+##Tier 2
+
+* User can add new interests to their list
+* User can add a location to their profile
+* User can connect with another individual
+* User can edit the background color of their profile
+* User can send a referral link to others to invite them to join Friendos
 
 **Optional Nice-to-have Stories**
+##Tier 3
 
-* Log of past songs/people with album art covers matching
-* Page of most played songs (i.e. songs that most users are connecting through)
-* Profile Add-On: Top music choices, etc.
-* Optional Shuffle Button (i.e. random encounter/random song)
-* Listening/Encounter Queue
+* User can create and use a group chat based on Facebook Messenger API
+* User can add a story that links keywords
+* User can further customize their individual profile
 
 ### 2. Screen Archetypes
 

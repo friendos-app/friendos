@@ -24,7 +24,7 @@ Creates a profile for a user based on hobbies they enjoy, and connects them with
 ### 1. User Stories (Required and Optional)
 
 **Required Must-have Stories**
-##Tier 1
+## Tier 1
 
 * User logs into app via Facebook API authentication
 * User can edit profile screen, including adding interest and a bio
@@ -33,7 +33,7 @@ Creates a profile for a user based on hobbies they enjoy, and connects them with
 * User can view an individual person's profile, including bio and interests
 * User can add comments to a person's profile
 
-##Tier 2
+## Tier 2
 
 * User can add new interests to their list
 * User can add a location to their profile
@@ -42,7 +42,7 @@ Creates a profile for a user based on hobbies they enjoy, and connects them with
 * User can send a referral link to others to invite them to join Friendos
 
 **Optional Nice-to-have Stories**
-##Tier 3
+## Tier 3
 
 * User can create and use a group chat based on Facebook Messenger API
 * User can add a story that links keywords

@@ -51,35 +51,36 @@ Creates a profile for a user based on hobbies they enjoy, and connects them with
 ### 2. Screen Archetypes
 
 * Login 
-* Register - User signs up or logs into their account
-   * Upon Download/Reopening of the application, the user is prompted to log in to gain access to their profile information to be properly matched with another person. 
-   * ...
-* Messaging Screen - Chat for users to communicate (direct 1-on-1)
-   * Upon selecting music choice users matched and message screen opens
+   * User can register and login via Facebook.
+* Home Screen
+   * Shows other users that match with the user.
 * Profile Screen 
-   * Allows user to upload a photo and fill in information that is interesting to them and others
-* Song Selection Screen.
-   * Allows user to be able to choose their desired song, artist, genre of preference and begin listening and interacting with others.
+   * Allows user to upload a photo, create a bio, and share their interests with others.
 * Settings Screen
-   * Lets people change language, and app notification settings.
+   * Lets the user change their settings.
+* People Profile Screen
+   * Shows detailed profiles of other users.
+* Connection Request Screen
+   * Allows user to request to connect with other users.
+* My Requests Screen
+   * Allows user to accept or reject requests from other users.
 
 ### 3. Navigation
 
 **Tab Navigation** (Tab to Screen)
 
-* Music selection
 * Profile
+* My Requests
 * Settings
 
-Optional:
-* Music/Encounter Queue
-* Discover (Top Choices)
-
 **Flow Navigation** (Screen to Screen)
-* Forced Log-in -> Account creation if no log in is available
-* Music Selection (Or Queue if Optional) -> Jumps to Chat
-* Profile -> Text field to be modified. 
-* Settings -> Toggle settings
+* Forced Log-in -> Account creation if no log in is available.
+* Create Profile or Jumps to Home Page, if user already has an account.
+* Profile -> Settings.
+* Settings -> Toggle settings.
+* Home Page -> Other Profiles.
+* Other Profiles -> Connection Request.
+* Home Page -> My Requests.
 
 ## Wireframes
 <img src="https://i.imgur.com/wFyo3PV.jpg" width=800><br>

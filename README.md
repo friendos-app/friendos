@@ -7,6 +7,7 @@ Unit 8: Group Milestone - README
 1. [Overview](#Overview)
 1. [Product Spec](#Product-Spec)
 1. [Wireframes](#Wireframes)
+2. [Schema](#Schema)
 
 ## Overview
 ### Description
@@ -84,3 +85,18 @@ Creates a profile for a user based on hobbies they enjoy, and connects them with
 
 ## Wireframes
 <img src="https://i.imgur.com/wFyo3PV.jpg" width=800><br>
+
+## Schema
+
+### Models
+<img src="https://i.imgur.com/HeoJbKK.png" width=800><br>
+
+### Networking
+* Login Screen
+* Home Screen
+* Profile Screen
+* Settings Screen
+* People Profile Screen
+* Connection Request Screen
+* My Requests Screen
+

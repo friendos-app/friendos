@@ -93,10 +93,100 @@ Creates a profile for a user based on hobbies they enjoy, and connects them with
 
 ### Networking
 * Login Screen
+  * (Read / GET) - Get current logged in user
+```swift
+// (Read / GET) - Get current logged in user
+let query = PFQuery(className:"Post")
+```
+  * (Read / GET) - Get current logged in user’s background color
+```swift
+// (Read / GET) - Get current logged in user’s background color
+let query = PFQuery(className:"Post")
+```
+  * (Create / POST) - Create new login credentials
+```swift
+// (Create / POST) - Create new login credentials
+let query = PFQuery(className:"Post")
+```
+
 * Home Screen
+  * (Read / Get) - Get users name, bio, and photo with matching interests
+```swift
+// (Read / Get) - Get users name, bio, and photo with matching interests
+let query = PFQuery(className:"Post")
+```
 * Profile Screen
+  * (Read / GET) - Get logged in users photo, bio, interests
+```swift
+// (Read / GET) - Get logged in users photo, bio, interests
+let query = PFQuery(className:"Post")
+```
+  * (Read / GET) - Get comments on logged in user’s photo
+```swift
+// (Read / GET) - Get comments on logged in user’s photo
+let query = PFQuery(className:"Post")
+```
+  * (Update / PUT) - Update user bio
+```swift
+// (Update / PUT) - Update user bio
+let query = PFQuery(className:"Post")
+```
+  * (Update / PUT) - Update user interests
+```swift
+// (Update / PUT) - Update user interests
+let query = PFQuery(className:"Post")
+```
+  * (Update / PUT) - Update user photo
+```swift
+// (Update / PUT) - Update user photo
+let query = PFQuery(className:"Post")
+```
+
 * Settings Screen
+  * (Read / GET) - Get user background color, location, referral link
+```swift
+// (Read / GET) - Get user background color, location, referral link
+let query = PFQuery(className:"Post")
+```
+  * (Update / PUT) - Change background color
+```swift
+// (Update / PUT) - Change background color
+let query = PFQuery(className:"Post")
+```
+  * (Update / PUT) - Change location
+```swift
+// (Update / PUT) - Change location
+let query = PFQuery(className:"Post")
+```
+ 
 * People Profile Screen
+  * (Read / GET) - Get user’s bio, interests, photo, comments
+```swift
+// (Read / GET) - Get user’s bio, interests, photo, comments
+let query = PFQuery(className:"Post")
+```
+  * (Update / PUT) - Add a new comment
+```swift
+// (Update / PUT) - Add a new comment
+let query = PFQuery(className:"Post")
+```
+ 
 * Connection Request Screen
+  * (Update / PUT) - Create a friend request with the person
+```swift
+// (Update / PUT) - Create a friend request with the person
+let query = PFQuery(className:"Post")
+```
 * My Requests Screen
+  * (Read / GET) - Get connection requests that have not been accepted / rejected
+```swift
+// (Read / GET) - Get connection requests that have not been accepted / rejected
+let query = PFQuery(className:"Post")
+```
+  * (Update / PUT) - Set connection request to accepted / rejected
+```swift
+// (Update / PUT) - Set connection request to accepted / rejected
+let query = PFQuery(className:"Post")
+```
+
 

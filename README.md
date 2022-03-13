@@ -89,7 +89,7 @@ Creates a profile for a user based on hobbies they enjoy, and connects them with
 ## Schema
 
 ### Models
-<img src="https://i.imgur.com/HeoJbKK.png" width=800><br>
+<img src="https://i.imgur.com/AOVTcdR.png" width=800><br>
 
 ### Networking
 #### Login Screen

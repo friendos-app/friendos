@@ -118,7 +118,8 @@ if PFUser.current() != nil {
   * (Read / GET) - Get current logged in user’s background color
 ```swift
 // (Read / GET) - Get current logged in user’s background color
-let query = PFQuery(className:"Post")
+let curUser = PFUser.current()
+let backgroundColor = curUser["background_color"]
 ```
   * (Create / POST) - Create new login credentials
 ```swift
@@ -143,9 +144,19 @@ let query = PFQuery(className:"Post")
 * Home Screen
   * (Read / Get) - Get users name, bio, and photo with matching interests
 ```swift
+// (Read / GET) - Find the current user's interests to use in query
+let userInterestQuery = PFQuery(className:"UserInterests")
+userInterestQuery.whereKey("user_id", equalTo: PFUser.current())
+let userInterestsResults = userInterestQuery.findObjects()
+let userInterests = userInterestResults["interest_id"]
+
 // (Read / Get) - Get users name, bio, and photo with matching interests
-let query = PFQuery(className:"Post")
+let matchQuery = PFQuery(className: "UserInterests")
+matchQuery.containedIn("interest_id", userInterests)
+let matchResults = matchQuery.findObjects()
+let matchUsers = matchResults["user_id"]
 ```
+
 * Profile Screen
   * (Read / GET) - Get logged in users photo, bio, interests
 ```swift

@@ -93,10 +93,27 @@ Creates a profile for a user based on hobbies they enjoy, and connects them with
 
 ### Networking
 * Login Screen
-  * (Read / GET) - Get current logged in user
+  * (Read / GET) - Login
+```swift
+// (Read / GET) - Login user
+@IBAction func signin(_ sender: Any) {
+    PFUser.logInWithUsername(inBackground: self.txtUsernameSignin.text!, password: self.txtPasswordSignin.text!) {
+      (user: PFUser?, error: Error?) -> Void in
+      if user != nil {
+        self.displayAlert(withTitle: "Login Successful", message: "")
+      } else {
+        self.displayAlert(withTitle: "Error", message: error!.localizedDescription)
+      }
+    }
+}
+```
+  * (Read / GET) - Check if user already logged in
 ```swift
 // (Read / GET) - Get current logged in user
-let query = PFQuery(className:"Post")
+if PFUser.current() != nil {
+  // Add code to redirect to Home screen if already logged in 
+}
+
 ```
   * (Read / GET) - Get current logged in user’s background color
 ```swift
@@ -106,7 +123,21 @@ let query = PFQuery(className:"Post")
   * (Create / POST) - Create new login credentials
 ```swift
 // (Create / POST) - Create new login credentials
-let query = PFQuery(className:"Post")
+@IBAction func signup(_ sender: Any) {
+    let user = PFUser()
+    user.username = self.txtUsernameSignup.text
+    user.password = self.txtPasswordSignup.text
+
+    self.indicatorSignup.startAnimating()
+    user.signUpInBackground {(succeeded: Bool, error: Error?) -> Void in
+        self.indicatorSignup.stopAnimating()
+        if let error = error {
+            self.displayAlert(withTitle: "Error", message: error.localizedDescription)
+        } else {
+            self.displayAlert(withTitle: "Success", message: "Account has been successfully created")
+        }
+    }
+}
 ```
 
 * Home Screen

@@ -85,6 +85,7 @@ Creates a profile for a user based on hobbies they enjoy, and connects them with
 
 ## Wireframes
 <img src="https://i.imgur.com/wFyo3PV.jpg" width=800><br>
+<img src="https://imgur.com/a/ASoQEeW" width=800><br>
 
 ## Schema
 

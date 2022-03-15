@@ -161,8 +161,36 @@ let matchUsers = matchResults["user_id"]
 #### Profile Screen
 * (Read / GET) - Get logged in users photo, bio, interests
 ```swift
-// (Read / GET) - Get logged in users photo, bio, interests
-let query = PFQuery(className:"Post")
+let user = PFUser.current()
+// Get user bio and photo
+let bio = user?["bio"]
+let photo = user?["image"]
+
+// Find interests
+let query = PFQuery(className: "UserInterests")
+query.includeKey("interest_id")
+query.whereKey("user_id", equalTo: user)
+
+// String to hold interests
+var interests = [String]()
+
+// Loop through results and put interests into the array
+// This happens in the background, so need call reload view when complete
+query.findObjectsInBackground(block: { (objects, error) in
+    if (error == nil) {
+        if let interest_list = objects{
+            for interest in interest_list {
+                let cur_interest = interest["interest_id"] as! PFObject
+                interests.append(cur_interest["interest"] as! String)
+            }
+
+            print(interests)
+        }
+
+    } else {
+        print("Error")
+    }
+})
 ```
 * (Read / GET) - Get comments on logged in user’s photo
 ```swift

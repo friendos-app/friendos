@@ -10,7 +10,40 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    private var apiKey: String {
+      get {
+          
+        // 1
+        guard let filePath = Bundle.main.path(forResource: "parse-api", ofType: "plist") else {
+          fatalError("Couldn't find file 'parse-api.plist'.")
+        }
+        // 2
+        let plist = NSDictionary(contentsOfFile: filePath)
+        guard let value = plist?.object(forKey: "API_Key") as? String else {
+          fatalError("Couldn't find key 'API_Key' in 'parse-api.plist'.")
+        }
+ 
+        return value
+      }
+    }
+        
+    private var clientKey: String {
+      get {
+          
+        // 1
+        guard let filePath = Bundle.main.path(forResource: "parse-api", ofType: "plist") else {
+          fatalError("Couldn't find file 'parse-api.plist'.")
+        }
+        // 2
+        let plist = NSDictionary(contentsOfFile: filePath)
+        guard let value = plist?.object(forKey: "CLIENT_Key") as? String else {
+          fatalError("Couldn't find key 'CLIENT_Key' in 'parse-api.plist'.")
+        }
 
+        return value
+      }
+    }
+    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.

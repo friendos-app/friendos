@@ -29,6 +29,13 @@ Creates a profile for a user based on hobbies they enjoy, and connects them with
 
 * User signs up for app
 * User logs into app
+
+User story demonstration for log in and sign up:
+
+<img src="http://g.recordit.co/UMb6JVRIjx.gif">
+
+
+
 * User can edit profile screen, including adding interest and a bio
 * User can view their own bio
 * User can see a list of people using the app

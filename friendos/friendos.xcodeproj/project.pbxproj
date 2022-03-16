@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		92086F0EB603B8A5B2AAD664 /* Pods_friendos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13699A731704C2AABDB1082F /* Pods_friendos.framework */; };
 		AAFEE9C127E1813F00A1AD9D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFEE9C027E1813F00A1AD9D /* AppDelegate.swift */; };
 		AAFEE9C327E1813F00A1AD9D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFEE9C227E1813F00A1AD9D /* SceneDelegate.swift */; };
 		AAFEE9C527E1813F00A1AD9D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFEE9C427E1813F00A1AD9D /* ViewController.swift */; };
@@ -17,6 +18,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		13699A731704C2AABDB1082F /* Pods_friendos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_friendos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E08E70F5EFEB46193915E26 /* Pods-friendos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-friendos.release.xcconfig"; path = "Target Support Files/Pods-friendos/Pods-friendos.release.xcconfig"; sourceTree = "<group>"; };
+		9E2DF336AB42E74CAFEEBD20 /* Pods-friendos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-friendos.debug.xcconfig"; path = "Target Support Files/Pods-friendos/Pods-friendos.debug.xcconfig"; sourceTree = "<group>"; };
 		AAFEE9BD27E1813F00A1AD9D /* friendos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = friendos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAFEE9C027E1813F00A1AD9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AAFEE9C227E1813F00A1AD9D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -34,17 +38,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92086F0EB603B8A5B2AAD664 /* Pods_friendos.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		040DD25BD62A04D436233CB6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9E2DF336AB42E74CAFEEBD20 /* Pods-friendos.debug.xcconfig */,
+				6E08E70F5EFEB46193915E26 /* Pods-friendos.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		AAFEE9B427E1813F00A1AD9D = {
 			isa = PBXGroup;
 			children = (
 				AAFEE9BF27E1813F00A1AD9D /* friendos */,
 				AAFEE9BE27E1813F00A1AD9D /* Products */,
+				040DD25BD62A04D436233CB6 /* Pods */,
+				EA8855218DB5F0E7E18C052E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -72,6 +89,14 @@
 			path = friendos;
 			sourceTree = "<group>";
 		};
+		EA8855218DB5F0E7E18C052E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				13699A731704C2AABDB1082F /* Pods_friendos.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -79,10 +104,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AAFEE9D127E1814100A1AD9D /* Build configuration list for PBXNativeTarget "friendos" */;
 			buildPhases = (
+				774877FF6F33E56A58B65637 /* [CP] Check Pods Manifest.lock */,
 				AAFEE9B927E1813F00A1AD9D /* Sources */,
 				AAFEE9BA27E1813F00A1AD9D /* Frameworks */,
 				AAFEE9BB27E1813F00A1AD9D /* Resources */,
 				AAFEE9D727E189F900A1AD9D /* ShellScript */,
+				BAC653EA362F938862C732FF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -141,6 +168,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		774877FF6F33E56A58B65637 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-friendos-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		AAFEE9D727E189F900A1AD9D /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -157,6 +206,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nCONFIG_FILE_BASE_NAME=\"parse-api\"\n\nCONFIG_FILE_NAME=${CONFIG_FILE_BASE_NAME}.plist\nSAMPLE_CONFIG_FILE_NAME=${CONFIG_FILE_BASE_NAME}-Sample.plist\n\nCONFIG_FILE_PATH=$SRCROOT/$PRODUCT_NAME/$CONFIG_FILE_NAME\nSAMPLE_CONFIG_FILE_PATH=$SRCROOT/$PRODUCT_NAME/$SAMPLE_CONFIG_FILE_NAME\n\nif [ -f \"$CONFIG_FILE_PATH\" ]; then\n  echo \"$CONFIG_FILE_PATH exists.\"\nelse\n  echo \"$CONFIG_FILE_PATH does not exist, copying sample\"\n  cp -v \"${SAMPLE_CONFIG_FILE_PATH}\" \"${CONFIG_FILE_PATH}\"\nfi\n";
+		};
+		BAC653EA362F938862C732FF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-friendos/Pods-friendos-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-friendos/Pods-friendos-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-friendos/Pods-friendos-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -311,6 +377,7 @@
 		};
 		AAFEE9D227E1814100A1AD9D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E2DF336AB42E74CAFEEBD20 /* Pods-friendos.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -339,6 +406,7 @@
 		};
 		AAFEE9D327E1814100A1AD9D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6E08E70F5EFEB46193915E26 /* Pods-friendos.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

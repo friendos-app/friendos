@@ -27,7 +27,8 @@ Creates a profile for a user based on hobbies they enjoy, and connects them with
 **Required Must-have Stories**
 ### Tier 1
 
-* User logs into app via Facebook API authentication
+* User signs up for app
+* User logs into app
 * User can edit profile screen, including adding interest and a bio
 * User can view their own bio
 * User can see a list of people using the app
@@ -48,6 +49,7 @@ Creates a profile for a user based on hobbies they enjoy, and connects them with
 * User can create and use a group chat based on Facebook Messenger API
 * User can add a story that links keywords
 * User can further customize their individual profile
+* User logs into app via Facebook API authentication
 
 ### 2. Screen Archetypes
 

@@ -15,6 +15,8 @@
 		AAFEE9CD27E1814100A1AD9D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAFEE9CB27E1814100A1AD9D /* LaunchScreen.storyboard */; };
 		AAFEE9D527E1872400A1AD9D /* parse-api.plist in Resources */ = {isa = PBXBuildFile; fileRef = AAFEE9D427E1872400A1AD9D /* parse-api.plist */; };
 		AD9A364727E28AB30072BC5F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9A364627E28AB30072BC5F /* LoginViewController.swift */; };
+		AD9A364927E28E5C0072BC5F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9A364827E28E5C0072BC5F /* HomeViewController.swift */; };
+		AD9A364B27E28ECC0072BC5F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9A364A27E28ECC0072BC5F /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 		AAFEE9D427E1872400A1AD9D /* parse-api.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "parse-api.plist"; sourceTree = "<group>"; };
 		AAFEE9D627E1898A00A1AD9D /* parse-api-Sample.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "parse-api-Sample.plist"; sourceTree = "<group>"; };
 		AD9A364627E28AB30072BC5F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		AD9A364827E28E5C0072BC5F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		AD9A364A27E28ECC0072BC5F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,8 @@
 				AAFEE9D427E1872400A1AD9D /* parse-api.plist */,
 				AAFEE9D627E1898A00A1AD9D /* parse-api-Sample.plist */,
 				AD9A364627E28AB30072BC5F /* LoginViewController.swift */,
+				AD9A364827E28E5C0072BC5F /* HomeViewController.swift */,
+				AD9A364A27E28ECC0072BC5F /* ProfileViewController.swift */,
 			);
 			path = friendos;
 			sourceTree = "<group>";
@@ -233,7 +239,9 @@
 			files = (
 				AD9A364727E28AB30072BC5F /* LoginViewController.swift in Sources */,
 				AAFEE9C127E1813F00A1AD9D /* AppDelegate.swift in Sources */,
+				AD9A364B27E28ECC0072BC5F /* ProfileViewController.swift in Sources */,
 				AAFEE9C327E1813F00A1AD9D /* SceneDelegate.swift in Sources */,
+				AD9A364927E28E5C0072BC5F /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -23,6 +23,20 @@ class LoginViewController: UIViewController {
     
     // Sign up a new user and segue to the profile screen
     @IBAction func onSignUp(_ sender: Any) {
+        let user = PFUser()
+        user.username = userNameText.text
+        user.password = passwordText.text
+        
+        // Attempt to sign the user up
+        user.signUpInBackground { success, error in
+            if let error = error {
+                let errorString = error.localizedDescription
+                print(errorString)
+            } else {
+                self.performSegue(withIdentifier: "goLoginProfile", sender: nil)
+            }
+        }
+
     }
     
     // Login a user and segue to the Home screen

@@ -30,7 +30,7 @@
 		AAFEE9CC27E1814100A1AD9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AAFEE9CE27E1814100A1AD9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AAFEE9D427E1872400A1AD9D /* parse-api.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "parse-api.plist"; sourceTree = "<group>"; };
-		AAFEE9D627E1898A00A1AD9D /* parse-api-SAMPLE.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "parse-api-SAMPLE.plist"; sourceTree = "<group>"; };
+		AAFEE9D627E1898A00A1AD9D /* parse-api-Sample.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "parse-api-Sample.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,7 +51,6 @@
 				9E2DF336AB42E74CAFEEBD20 /* Pods-friendos.debug.xcconfig */,
 				6E08E70F5EFEB46193915E26 /* Pods-friendos.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -84,7 +83,7 @@
 				AAFEE9CB27E1814100A1AD9D /* LaunchScreen.storyboard */,
 				AAFEE9CE27E1814100A1AD9D /* Info.plist */,
 				AAFEE9D427E1872400A1AD9D /* parse-api.plist */,
-				AAFEE9D627E1898A00A1AD9D /* parse-api-SAMPLE.plist */,
+				AAFEE9D627E1898A00A1AD9D /* parse-api-Sample.plist */,
 			);
 			path = friendos;
 			sourceTree = "<group>";
@@ -108,7 +107,7 @@
 				AAFEE9B927E1813F00A1AD9D /* Sources */,
 				AAFEE9BA27E1813F00A1AD9D /* Frameworks */,
 				AAFEE9BB27E1813F00A1AD9D /* Resources */,
-				AAFEE9D727E189F900A1AD9D /* ShellScript */,
+				AAFEE9D727E189F900A1AD9D /* Setup API plist file */,
 				BAC653EA362F938862C732FF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
@@ -190,7 +189,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		AAFEE9D727E189F900A1AD9D /* ShellScript */ = {
+		AAFEE9D727E189F900A1AD9D /* Setup API plist file */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -199,6 +198,7 @@
 			);
 			inputPaths = (
 			);
+			name = "Setup API plist file";
 			outputFileListPaths = (
 			);
 			outputPaths = (

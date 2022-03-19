@@ -53,4 +53,17 @@ class LoginViewController: UIViewController {
           }
         }
     }
+    
+    // Override prepare for segue to direct towards profile on login if this is a new sign up
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "goLoginProfile") {
+            // Get the tab bar
+            let barViewController = segue.destination as! UITabBarController
+            // Get the third nav controller (Profile)
+            let destViewController = barViewController.viewControllers![2] as! UINavigationController
+            // Set the selected controller to the one we are going to on sign up
+            barViewController.selectedViewController = destViewController
+            
+        }
+    }
 }

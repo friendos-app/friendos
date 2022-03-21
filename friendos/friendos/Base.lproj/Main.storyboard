@@ -90,8 +90,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wki-es-lTx">
-                                <rect key="frame" x="186" y="190" width="49" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="User Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zhQ-ja-kLL">
+                                <rect key="frame" x="163" y="243" width="89" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -101,11 +101,53 @@
                         <viewLayoutGuide key="safeArea" id="3IF-TC-AXK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="zFw-GR-9iG"/>
+                    <navigationItem key="navigationItem" id="zFw-GR-9iG">
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="whz-kL-FmL">
+                            <connections>
+                                <segue destination="lLz-Ee-FDX" kind="presentation" id="3le-3T-QQG"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R7u-O6-oeX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-739" y="2048"/>
+        </scene>
+        <!--Edit Profile View Controller-->
+        <scene sceneID="DJA-BL-Blo">
+            <objects>
+                <viewController id="CtL-sa-OXx" customClass="EditProfileViewController" customModule="friendos" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BOW-vE-fSe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Edit Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Yu-rl-WKc">
+                                <rect key="frame" x="166" y="256" width="82" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="DJp-dC-Ch8"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="bhq-mQ-4LE">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="qhq-75-gbc">
+                            <connections>
+                                <action selector="cancel:" destination="CtL-sa-OXx" id="7Ag-yf-09a"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Submit" id="AMe-Nb-kWP">
+                            <connections>
+                                <action selector="submitEdit:" destination="CtL-sa-OXx" id="9cr-da-Ir2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bgY-oF-ZYb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-739" y="3518"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="oKh-GN-FXT">
@@ -259,6 +301,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fWT-2i-BWV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="188" y="1288"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="zDv-om-Tdz">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="lLz-Ee-FDX" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Pv1-eK-nE8">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="CtL-sa-OXx" kind="relationship" relationship="rootViewController" id="VSQ-YB-nuW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uKm-Lc-wnf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-739.13043478260875" y="2763.6160714285711"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

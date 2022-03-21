@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		92086F0EB603B8A5B2AAD664 /* Pods_friendos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13699A731704C2AABDB1082F /* Pods_friendos.framework */; };
+		AA32302427E929DD00CE307A /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA32302327E929DD00CE307A /* EditProfileViewController.swift */; };
 		AAFEE9C127E1813F00A1AD9D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFEE9C027E1813F00A1AD9D /* AppDelegate.swift */; };
 		AAFEE9C327E1813F00A1AD9D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFEE9C227E1813F00A1AD9D /* SceneDelegate.swift */; };
 		AAFEE9C827E1813F00A1AD9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAFEE9C627E1813F00A1AD9D /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 		13699A731704C2AABDB1082F /* Pods_friendos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_friendos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E08E70F5EFEB46193915E26 /* Pods-friendos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-friendos.release.xcconfig"; path = "Target Support Files/Pods-friendos/Pods-friendos.release.xcconfig"; sourceTree = "<group>"; };
 		9E2DF336AB42E74CAFEEBD20 /* Pods-friendos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-friendos.debug.xcconfig"; path = "Target Support Files/Pods-friendos/Pods-friendos.debug.xcconfig"; sourceTree = "<group>"; };
+		AA32302327E929DD00CE307A /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		AAFEE9BD27E1813F00A1AD9D /* friendos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = friendos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAFEE9C027E1813F00A1AD9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AAFEE9C227E1813F00A1AD9D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				AD9A364627E28AB30072BC5F /* LoginViewController.swift */,
 				AD9A364827E28E5C0072BC5F /* HomeViewController.swift */,
 				AD9A364A27E28ECC0072BC5F /* ProfileViewController.swift */,
+				AA32302327E929DD00CE307A /* EditProfileViewController.swift */,
 			);
 			path = friendos;
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 			files = (
 				AD9A364727E28AB30072BC5F /* LoginViewController.swift in Sources */,
 				AAFEE9C127E1813F00A1AD9D /* AppDelegate.swift in Sources */,
+				AA32302427E929DD00CE307A /* EditProfileViewController.swift in Sources */,
 				AD9A364B27E28ECC0072BC5F /* ProfileViewController.swift in Sources */,
 				AAFEE9C327E1813F00A1AD9D /* SceneDelegate.swift in Sources */,
 				AD9A364927E28E5C0072BC5F /* HomeViewController.swift in Sources */,

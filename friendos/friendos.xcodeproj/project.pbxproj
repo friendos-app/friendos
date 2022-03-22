@@ -18,6 +18,7 @@
 		AD9A364727E28AB30072BC5F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9A364627E28AB30072BC5F /* LoginViewController.swift */; };
 		AD9A364927E28E5C0072BC5F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9A364827E28E5C0072BC5F /* HomeViewController.swift */; };
 		AD9A364B27E28ECC0072BC5F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9A364A27E28ECC0072BC5F /* ProfileViewController.swift */; };
+		E78C695527E98F0300DB36D1 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78C695427E98F0300DB36D1 /* UserCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		AD9A364627E28AB30072BC5F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AD9A364827E28E5C0072BC5F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		AD9A364A27E28ECC0072BC5F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		E78C695427E98F0300DB36D1 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 				AAFEE9D627E1898A00A1AD9D /* parse-api-Sample.plist */,
 				AD9A364627E28AB30072BC5F /* LoginViewController.swift */,
 				AD9A364827E28E5C0072BC5F /* HomeViewController.swift */,
+				E78C695427E98F0300DB36D1 /* UserCell.swift */,
 				AD9A364A27E28ECC0072BC5F /* ProfileViewController.swift */,
 				AA32302327E929DD00CE307A /* EditProfileViewController.swift */,
 			);
@@ -246,6 +249,7 @@
 				AD9A364B27E28ECC0072BC5F /* ProfileViewController.swift in Sources */,
 				AAFEE9C327E1813F00A1AD9D /* SceneDelegate.swift in Sources */,
 				AD9A364927E28E5C0072BC5F /* HomeViewController.swift in Sources */,
+				E78C695527E98F0300DB36D1 /* UserCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

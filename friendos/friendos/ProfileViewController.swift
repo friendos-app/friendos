@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import Parse
 
 class ProfileViewController: UIViewController {
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()

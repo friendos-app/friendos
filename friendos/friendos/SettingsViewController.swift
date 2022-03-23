@@ -13,8 +13,7 @@ class SettingsViewController: UIViewController, UIColorPickerViewControllerDeleg
     var cancellable: Any?
     let curUser = PFUser.current()
     
-    @IBAction func onColorTap(_ sender: UITapGestureRecognizer) {
-        
+    @IBAction func onColorTouch(_ sender: Any) {
         // Initialize the color picker
         let picker = UIColorPickerViewController()
         // Set up the initial color
@@ -23,49 +22,34 @@ class SettingsViewController: UIViewController, UIColorPickerViewControllerDeleg
         picker.delegate = self
         // Present the picker
         self.present(picker, animated: true, completion: nil)
+    }
+    
+    // Copy referal link to clipboard
+    @IBAction func onCopyTouch(_ sender: Any) {
+        let refLink = curUser?["referal_link"] as? String
+        UIPasteboard.general.string = "https:\\" + refLink!
         
-//        // Initialize the color picker
-//        let picker = UIColorPickerViewController()
-//
-//        picker.selectedColor = self.view.backgroundColor!
-//
-//        // Variables to hold colors for storing in db
+        // Tell user we copied to clipboard
+        let copiedAlert = UIAlertController(title: "Copied to Clipboard", message: "Referal URL copied", preferredStyle: .alert)
         
-//
-//        self.cancellable = picker.publisher(for: \.selectedColor).sink {
-//            color in
-//            DispatchQueue.main.async {
-//
-//
-//
-//                let colorWorked = color.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
-//                print(colorWorked)
-//                print(red)
-//                print(green)
-//                print(blue)
-//                print(alpha)
-//                    // self.view.backgroundColor = color
-//
-//            }
-//        }
-//
-//        self.present(picker, animated: true, completion: nil)
-//
-//        func colorPickerViewControllerDidFinish(_ viewController: UIColorPickerViewController) {
-//            print("Finished")
-//        }
-
+        // Add action to dismiss
+        let okayAction = UIAlertAction(title: "Okay", style: .default)
+        copiedAlert.addAction(okayAction)
+        
+        present(copiedAlert, animated: true, completion: nil)
         
     }
     
 
+    
     
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // Set the referall link to the correct value
+
     }
     
     func colorPickerViewControllerDidFinish(_ viewController: UIColorPickerViewController) {

@@ -163,50 +163,50 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set Background Color" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WBm-q1-lNA">
-                                <rect key="frame" x="20" y="215" width="192" height="24"/>
-                                <gestureRecognizers/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g5X-WN-6Aw">
+                                <rect key="frame" x="20" y="361" width="165" height="38"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Copy referal link">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
+                                </buttonConfiguration>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="GcC-eY-Ypv" appends="YES" id="USp-eX-MlQ"/>
+                                    <action selector="onCopyTouch:" destination="rPV-aM-0r1" eventType="touchUpInside" id="aX1-fZ-O38"/>
                                 </connections>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yfA-un-Dtg">
-                                <rect key="frame" x="20" y="274" width="110" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Referral Link" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oy6-zY-Yw7">
-                                <rect key="frame" x="20" y="333" width="109" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DqA-c2-PFl">
+                                <rect key="frame" x="20" y="288" width="134" height="38"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Set Location">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vhe-w2-iBs">
+                                <rect key="frame" x="20" y="215" width="254" height="38"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Choose Background Color">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="onColorTouch:" destination="rPV-aM-0r1" eventType="touchUpInside" id="1TS-qN-yD4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2RE-ra-7oD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="DqA-c2-PFl" firstAttribute="top" secondItem="Vhe-w2-iBs" secondAttribute="bottom" constant="35" id="2h2-Q8-WIF"/>
+                            <constraint firstItem="Vhe-w2-iBs" firstAttribute="top" secondItem="VDJ-XY-87Y" secondAttribute="bottom" constant="35" id="5Lm-He-HnV"/>
                             <constraint firstItem="VDJ-XY-87Y" firstAttribute="top" secondItem="2RE-ra-7oD" secondAttribute="top" constant="50" id="7xb-GN-jve"/>
-                            <constraint firstItem="WBm-q1-lNA" firstAttribute="top" secondItem="VDJ-XY-87Y" secondAttribute="bottom" constant="35" id="9ld-tc-kOQ"/>
-                            <constraint firstItem="oy6-zY-Yw7" firstAttribute="leading" secondItem="2RE-ra-7oD" secondAttribute="leading" constant="20" id="AhJ-vu-NTd"/>
-                            <constraint firstItem="WBm-q1-lNA" firstAttribute="leading" secondItem="2RE-ra-7oD" secondAttribute="leading" constant="20" id="TS6-UQ-EDd"/>
-                            <constraint firstItem="oy6-zY-Yw7" firstAttribute="top" secondItem="yfA-un-Dtg" secondAttribute="bottom" constant="35" id="hEr-8Y-u6w"/>
+                            <constraint firstItem="Vhe-w2-iBs" firstAttribute="leading" secondItem="2RE-ra-7oD" secondAttribute="leading" constant="20" id="8Gh-zx-la0"/>
+                            <constraint firstItem="g5X-WN-6Aw" firstAttribute="top" secondItem="DqA-c2-PFl" secondAttribute="bottom" constant="35" id="Gty-eZ-c5T"/>
+                            <constraint firstItem="g5X-WN-6Aw" firstAttribute="leading" secondItem="2RE-ra-7oD" secondAttribute="leading" constant="20" id="eS9-ZH-hJw"/>
+                            <constraint firstItem="DqA-c2-PFl" firstAttribute="leading" secondItem="2RE-ra-7oD" secondAttribute="leading" constant="20" id="i23-B3-ZeI"/>
                             <constraint firstItem="VDJ-XY-87Y" firstAttribute="centerX" secondItem="vUx-Mo-cSJ" secondAttribute="centerX" id="n6P-Yy-NpQ"/>
-                            <constraint firstItem="yfA-un-Dtg" firstAttribute="top" secondItem="WBm-q1-lNA" secondAttribute="bottom" constant="35" id="wm9-cZ-bP3"/>
-                            <constraint firstItem="yfA-un-Dtg" firstAttribute="leading" secondItem="2RE-ra-7oD" secondAttribute="leading" constant="20" id="yx5-Yo-jps"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="dRg-50-fRC"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AOU-H1-M6G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="GcC-eY-Ypv">
-                    <connections>
-                        <action selector="onColorTap:" destination="rPV-aM-0r1" id="OPs-RZ-TRd"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="187" y="2048"/>
         </scene>

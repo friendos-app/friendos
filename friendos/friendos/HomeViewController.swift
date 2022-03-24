@@ -17,49 +17,102 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return self.user_list.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = UserProfiles.dequeueReusableCell(withIdentifier: "UserCell") as! UserCell
-        cell.UserUsername!.text = "Dan"
-        cell.UserBio!.text = "Hey"
+        
+        print("*****")
+        let cur_user = user_list[indexPath.row]
+        print(cur_user)
+        print("*****")
+        
+        cell.UserUsername!.text = cur_user["username"] as! String
+        
+        if cur_user["bio"] != nil {
+            cell.UserBio!.text = cur_user["bio"] as! String
+        }
+        else {
+            cell.UserBio!.text = "User has empty bio" 
+        }
         
         return cell
         
     }
+    
+    
+
+    
+    // List of users that are not the current user.
+    var user_list = [PFObject]()
+    
     
 
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
+        print("help")
+        
         let user = PFUser.current()
         // Get user bio and photo
-        let bio = user?["bio"]
-        let photo = user?["image"]
-
+        
+  
+        let user_object_id = user?["objectId"]
+        
         // Find interests
-        let query = PFQuery(className: "UserInterests")
-        query.includeKey("interest_id")
-        query.whereKey("user_id", equalTo: user)
+        let query = PFUser.query()
+        
+        
+        //query.includeKey("interest_id")
+        query!.whereKey("objectId", notEqualTo: user_object_id)
+        
+        
+        
+        
 
-        // String to hold interests
-        var interests = [String]()
+        
+//        let user_name = user?["username"]
+//
+//        // Finds objects whose title is not equal to "No hard feelings"
+//        let user_list = query.whereKey("username", notEqualTo: user_name);
+//
+//        print("okd")
+//        print(user_list)
+        
+        
+        
 
         // Loop through results and put interests into the array
         // This happens in the background, so need call reload view when complete
-        query.findObjectsInBackground(block: { (objects, error) in
+        query!.findObjectsInBackground(block: { (objects, error) in
             if (error == nil) {
-                if let interest_list = objects{
-                    for interest in interest_list {
-                        let cur_interest = interest["interest_id"] as! PFObject
-                        interests.append(cur_interest["interest"] as! String)
-                    }
-
-                    print(interests)
+                if let user_object_ids_list = objects {
+                    print(user_object_ids_list)
+                    self.user_list = user_object_ids_list
+                    print(self.user_list.count)
+                    
+                    self.UserProfiles.reloadData()
+     
+                    
                 }
+//                if let interest_list = objects{
+//                    for interest in interest_list {
+//                        if interest["interest_id"] != nil {
+//                            print("")
+//                            let cur_interest = interest["interest_id"] as! PFObject
+//
+//                            interests.append(cur_interest["interest"] as! String)
+//                        }
+//                        else {
+//                            print("Interests is set to nil")
+//                        }
+//                    }
+//
+//                    print(interests)
+//                }
 
             } else {
                 print("Error")

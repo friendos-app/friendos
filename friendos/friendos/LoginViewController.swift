@@ -26,6 +26,8 @@ class LoginViewController: UIViewController {
         let user = PFUser()
         user.username = userNameText.text
         user.password = passwordText.text
+        // Set up users referral link
+        user["referal_link"] = "https://getfriendos.com/" + self.userNameText.text!
         
         // Attempt to sign the user up
         user.signUpInBackground { success, error in
@@ -33,6 +35,11 @@ class LoginViewController: UIViewController {
                 let errorString = error.localizedDescription
                 print(errorString)
             } else {
+                
+                
+                
+                
+                
                 self.performSegue(withIdentifier: "goLoginProfile", sender: nil)
             }
         }

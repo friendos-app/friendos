@@ -149,15 +149,60 @@
             </objects>
             <point key="canvasLocation" x="-739" y="3518"/>
         </scene>
-        <!--View Controller-->
+        <!--Settings View Controller-->
         <scene sceneID="oKh-GN-FXT">
             <objects>
-                <viewController id="rPV-aM-0r1" sceneMemberID="viewController">
+                <viewController id="rPV-aM-0r1" customClass="SettingsViewController" customModule="friendos" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vUx-Mo-cSJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adjust Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VDJ-XY-87Y">
+                                <rect key="frame" x="93.5" y="138" width="227.5" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g5X-WN-6Aw">
+                                <rect key="frame" x="20" y="361" width="172" height="38"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Copy referral link">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="onCopyTouch:" destination="rPV-aM-0r1" eventType="touchUpInside" id="aX1-fZ-O38"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DqA-c2-PFl">
+                                <rect key="frame" x="20" y="288" width="134" height="38"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Set Location">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vhe-w2-iBs">
+                                <rect key="frame" x="20" y="215" width="254" height="38"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Choose Background Color">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="onColorTouch:" destination="rPV-aM-0r1" eventType="touchUpInside" id="1TS-qN-yD4"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="2RE-ra-7oD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="DqA-c2-PFl" firstAttribute="top" secondItem="Vhe-w2-iBs" secondAttribute="bottom" constant="35" id="2h2-Q8-WIF"/>
+                            <constraint firstItem="Vhe-w2-iBs" firstAttribute="top" secondItem="VDJ-XY-87Y" secondAttribute="bottom" constant="35" id="5Lm-He-HnV"/>
+                            <constraint firstItem="VDJ-XY-87Y" firstAttribute="top" secondItem="2RE-ra-7oD" secondAttribute="top" constant="50" id="7xb-GN-jve"/>
+                            <constraint firstItem="Vhe-w2-iBs" firstAttribute="leading" secondItem="2RE-ra-7oD" secondAttribute="leading" constant="20" id="8Gh-zx-la0"/>
+                            <constraint firstItem="g5X-WN-6Aw" firstAttribute="top" secondItem="DqA-c2-PFl" secondAttribute="bottom" constant="35" id="Gty-eZ-c5T"/>
+                            <constraint firstItem="g5X-WN-6Aw" firstAttribute="leading" secondItem="2RE-ra-7oD" secondAttribute="leading" constant="20" id="eS9-ZH-hJw"/>
+                            <constraint firstItem="DqA-c2-PFl" firstAttribute="leading" secondItem="2RE-ra-7oD" secondAttribute="leading" constant="20" id="i23-B3-ZeI"/>
+                            <constraint firstItem="VDJ-XY-87Y" firstAttribute="centerX" secondItem="vUx-Mo-cSJ" secondAttribute="centerX" id="n6P-Yy-NpQ"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="dRg-50-fRC"/>
                 </viewController>

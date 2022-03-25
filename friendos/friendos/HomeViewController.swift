@@ -130,14 +130,23 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
          let cell = sender as! UITableViewCell
          let indexPath = UserProfiles.indexPath(for: cell)!
          let user = user_list[indexPath.row]
-         print("Hey")
-         print(type(of: user))
-         print(user_list[indexPath.row]["bio"])
-         let new_bio = user_list[indexPath.row]["bio"] as? String
-         var new_dict = ["bio":new_bio]
-         print("yo")
+         
+         //Send userName as a string from HomeViewController to ProfileViewCOntroller
+         let new_username = user["username"] as? String
+         let username_dict = ["username":new_username]
+         //Send user bio as a string from HomeViewController to ProfileViewCOntroller
+         let new_bio = user["bio"] as? String
+         let bio_dict = ["bio":new_bio]
+         
+         // Segue information to UserCellViewController as Strings
          let UserCellViewController = segue.destination as! UserCellViewController
-         UserCellViewController.user = new_dict
+         UserCellViewController.userName = username_dict
+         UserCellViewController.user = bio_dict
+         print("Sending username to UserCellViewController")
+         print("Sending user bio to UserCellViewController")
+         
+         
+         
     }
 }
 

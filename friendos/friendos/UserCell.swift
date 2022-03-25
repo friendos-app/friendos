@@ -12,9 +12,7 @@ class UserCell: UITableViewCell {
     
     
     @IBOutlet weak var UserImage: UIImageView!
-    
     @IBOutlet weak var UserUsername: UILabel!
-    
     @IBOutlet weak var UserBio: UILabel!
     
     

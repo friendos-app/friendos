@@ -10,14 +10,18 @@ import Parse
 
 class UserCellViewController: UIViewController {
 
+    @IBOutlet weak var userUsername: UILabel!
+    @IBOutlet weak var userImage: UIImageView!
+    @IBOutlet weak var userBio: UILabel!
+    
     var user: [String:Any]!
-//
+    var userName: [String:Any]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print("This is the new view")
-        
-        print(user)
+        userBio.text = user["bio"] as? String
+        userUsername.text = userName["username"] as? String
         
         // Do any additional setup after loading the view.
 //        print(user[""])

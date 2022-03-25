@@ -16,9 +16,11 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var UserProfiles: UITableView!
     
     
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.user_list.count
     }
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -58,31 +60,21 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         let user = PFUser.current()
         // Get user bio and photo
+        //print("user = ", user)
         
   
         let user_object_id = user?["objectId"]
+        print("user_object_id = ", user_object_id)
+        
         
         // Find interests
         let query = PFUser.query()
+        print("query = ", query)
         
         
         //query.includeKey("interest_id")
         query!.whereKey("objectId", notEqualTo: user_object_id)
-        
-        
-        
-        
-
-        
-//        let user_name = user?["username"]
-//
-//        // Finds objects whose title is not equal to "No hard feelings"
-//        let user_list = query.whereKey("username", notEqualTo: user_name);
-//
-//        print("okd")
-//        print(user_list)
-        
-        
+    
         
 
         // Loop through results and put interests into the array
@@ -90,7 +82,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         query!.findObjectsInBackground(block: { (objects, error) in
             if (error == nil) {
                 if let user_object_ids_list = objects {
-                    print(user_object_ids_list)
+                    // print(user_object_ids_list)
                     self.user_list = user_object_ids_list
                     print(self.user_list.count)
                     

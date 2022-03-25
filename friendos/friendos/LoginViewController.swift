@@ -21,6 +21,13 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    // Check if user is logged in and segue to home screen if so
+    override func viewDidAppear(_ animated: Bool) {
+        if UserDefaults.standard.bool(forKey: "userLoggedIn") == true {
+            self.performSegue(withIdentifier: "goLoginHome", sender: self)
+        }
+    }
+    
     // Sign up a new user and segue to the profile screen
     @IBAction func onSignUp(_ sender: Any) {
         let user = PFUser()
@@ -35,11 +42,7 @@ class LoginViewController: UIViewController {
                 let errorString = error.localizedDescription
                 print(errorString)
             } else {
-                
-                
-                
-                
-                
+                UserDefaults.standard.set(true, forKey: "userLoggedIn")
                 self.performSegue(withIdentifier: "goLoginProfile", sender: nil)
             }
         }
@@ -53,10 +56,11 @@ class LoginViewController: UIViewController {
           (user: PFUser?, error: Error?) -> Void in
           // If we have a user, we can login and perform the segue to home
           if user != nil {
-            print("login success")
+              print("login success")
+              UserDefaults.standard.set(true, forKey: "userLoggedIn")
               self.performSegue(withIdentifier: "goLoginHome", sender: nil)
           } else {
-            print(error!.localizedDescription)
+              print(error!.localizedDescription)
           }
         }
     }

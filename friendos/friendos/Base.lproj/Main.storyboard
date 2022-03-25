@@ -235,7 +235,13 @@
                             <constraint firstItem="VDJ-XY-87Y" firstAttribute="centerX" secondItem="vUx-Mo-cSJ" secondAttribute="centerX" id="n6P-Yy-NpQ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="dRg-50-fRC"/>
+                    <navigationItem key="navigationItem" id="dRg-50-fRC">
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="Y4F-uU-xAL">
+                            <connections>
+                                <action selector="onLogoutTouch:" destination="rPV-aM-0r1" id="he6-WE-HMp"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AOU-H1-M6G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

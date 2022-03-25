@@ -13,6 +13,13 @@ class SettingsViewController: UIViewController, UIColorPickerViewControllerDeleg
     var cancellable: Any?
     let curUser = PFUser.current()
     
+    @IBAction func onLogoutTouch(_ sender: Any) {
+        PFUser.logOutInBackground()
+        UserDefaults.standard.set(false, forKey: "userLoggedIn")
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
     @IBAction func onColorTouch(_ sender: Any) {
         // Initialize the color picker
         let picker = UIColorPickerViewController()

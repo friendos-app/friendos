@@ -123,17 +123,22 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     // MARK: - Navigation
     
-//     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        // Get the new view controller using segue.destination.
 //        // Pass the selected object to the new view controller.
-//         print("Loading up the userdetails screen")
-//         let cell = sender as! UITableViewCell
-//         let indexPath = UserProfiles.indexPath(for: cell)!
-//         let user = user_list[indexPath.row]
-//         
-//         let UserCellViewController = segue.destination as! UserCellViewController
-//         UserCellViewController.user = user
+         print("Loading up the userdetails screen")
+         let cell = sender as! UITableViewCell
+         let indexPath = UserProfiles.indexPath(for: cell)!
+         let user = user_list[indexPath.row]
+         print("Hey")
+         print(type(of: user))
+         print(user_list[indexPath.row]["bio"])
+         let new_bio = user_list[indexPath.row]["bio"] as? String
+         var new_dict = ["bio":new_bio]
+         print("yo")
+         let UserCellViewController = segue.destination as! UserCellViewController
+         UserCellViewController.user = new_dict
     }
-    
+}
 
 

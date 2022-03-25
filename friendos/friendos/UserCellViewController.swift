@@ -10,11 +10,15 @@ import Parse
 
 class UserCellViewController: UIViewController {
 
-//    var user: [PFObject:Any]!
+    var user: [String:Any]!
 //
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        print("This is the new view")
+        
+        print(user)
+        
         // Do any additional setup after loading the view.
 //        print(user[""])
     }

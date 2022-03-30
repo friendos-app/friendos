@@ -52,11 +52,11 @@ class ProfileViewController: UIViewController {
                     usernameLabel.text = user_list[0]["username"] as? String
                     userBio.text = user_list[0]["bio"] as? String
                     
-                    let imageFile = user?["image"] as! PFFileObject
-                    let urlString = imageFile.url!
-                    let url = URL(string: urlString)!
-                    profilePhotoView.af.setImage(withURL: url)
-                    
+                    if let imageFile = user?["image"] as? PFFileObject {
+                        let urlString = imageFile.url!
+                        let url = URL(string: urlString)!
+                        profilePhotoView.af.setImage(withURL: url)
+                    }
 //                    let urlString = imageFile.url!
 //                    let url = URL(string: urlString)!
 //
@@ -108,10 +108,12 @@ class ProfileViewController: UIViewController {
                     usernameLabel.text = user_list[0]["username"] as? String
                     userBio.text = user_list[0]["bio"] as? String
                     
-                    let imageFile = user?["image"] as! PFFileObject
-                    let urlString = imageFile.url!
-                    let url = URL(string: urlString)!
-                    profilePhotoView.af.setImage(withURL: url)
+                    if let imageFile = user?["image"] as? PFFileObject {
+                        let urlString = imageFile.url!
+                        let url = URL(string: urlString)!
+                        profilePhotoView.af.setImage(withURL: url)
+                    }
+                   
                     
 //                    let urlString = imageFile.url!
 //                    let url = URL(string: urlString)!

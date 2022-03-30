@@ -254,21 +254,84 @@
             </objects>
             <point key="canvasLocation" x="187" y="2048"/>
         </scene>
-        <!--View Controller-->
+        <!--Connections View Controller-->
         <scene sceneID="uFT-9H-wSB">
             <objects>
-                <viewController id="iS1-gF-ILc" sceneMemberID="viewController">
+                <viewController id="iS1-gF-ILc" customClass="ConnectionsViewController" customModule="friendos" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lXx-er-DDM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="t1u-ZN-C2m">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ConnectionCell" rowHeight="70" id="tVf-Ft-Q77" customClass="ConnectionCell" customModule="friendos" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tVf-Ft-Q77" id="sn6-NK-COh">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A3q-17-Vcw">
+                                                    <rect key="frame" x="301.5" y="19.5" width="43.5" height="31"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" image="checkmark.square" catalog="system">
+                                                        <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage"/>
+                                                    </buttonConfiguration>
+                                                    <connections>
+                                                        <action selector="onAcceptConnection:" destination="tVf-Ft-Q77" eventType="touchUpInside" id="6NJ-tR-XvA"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lm3-qT-RGo">
+                                                    <rect key="frame" x="353" y="19.5" width="44" height="31"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" image="x.square" catalog="system"/>
+                                                    <connections>
+                                                        <action selector="onRejectConnection:" destination="tVf-Ft-Q77" eventType="touchUpInside" id="CQT-zv-iHL"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QnQ-Jj-ojZ">
+                                                    <rect key="frame" x="20" y="5" width="98" height="60"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="60" id="f1o-to-tvR"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Lm3-qT-RGo" firstAttribute="leading" secondItem="A3q-17-Vcw" secondAttribute="trailing" constant="8" symbolic="YES" id="Lka-bC-7P3"/>
+                                                <constraint firstItem="A3q-17-Vcw" firstAttribute="centerY" secondItem="sn6-NK-COh" secondAttribute="centerY" id="PaI-N1-wOc"/>
+                                                <constraint firstItem="QnQ-Jj-ojZ" firstAttribute="leading" secondItem="sn6-NK-COh" secondAttribute="leading" constant="20" symbolic="YES" id="RH3-NG-7dM"/>
+                                                <constraint firstItem="Lm3-qT-RGo" firstAttribute="centerY" secondItem="sn6-NK-COh" secondAttribute="centerY" id="Re4-si-Uxq"/>
+                                                <constraint firstAttribute="trailing" secondItem="Lm3-qT-RGo" secondAttribute="trailing" constant="17" id="Tcu-Yl-8jV"/>
+                                                <constraint firstAttribute="bottom" secondItem="QnQ-Jj-ojZ" secondAttribute="bottom" constant="5" id="oC9-Gg-FeO"/>
+                                                <constraint firstItem="QnQ-Jj-ojZ" firstAttribute="top" secondItem="sn6-NK-COh" secondAttribute="top" constant="5" id="wAo-Xb-d5E"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="acceptButton" destination="A3q-17-Vcw" id="Ukv-i4-Dmc"/>
+                                            <outlet property="rejectButton" destination="Lm3-qT-RGo" id="Nad-VX-emP"/>
+                                            <outlet property="usernameLabel" destination="QnQ-Jj-ojZ" id="ZWL-PA-BCn"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Iiv-6L-qZD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="Sgv-VM-1tM"/>
+                    <connections>
+                        <outlet property="connectionTableView" destination="t1u-ZN-C2m" id="AKy-zz-vI2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LjS-aw-ApK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1696" y="2048"/>
+            <point key="canvasLocation" x="-1697.1014492753625" y="2047.7678571428571"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="bW3-uw-R3d">
@@ -518,6 +581,7 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="HomeScreen_pic" width="120" height="80"/>
+        <image name="checkmark.square" catalog="system" width="128" height="114"/>
         <image name="gearshape" catalog="system" width="128" height="121"/>
         <image name="icons8-female-profile-50" width="128" height="128"/>
         <image name="icons8-home-page-24" width="24" height="24"/>
@@ -525,6 +589,7 @@
         <image name="image_placeholder" width="375" height="375"/>
         <image name="magazine" catalog="system" width="113" height="128"/>
         <image name="person.circle" catalog="system" width="128" height="121"/>
+        <image name="x.square" catalog="system" width="128" height="114"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

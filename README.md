@@ -39,6 +39,11 @@ User story demonstration for log in and sign up:
 * User can edit profile screen, including adding interest and a bio
 * User can view their own bio
 * User can see a list of people using the app
+
+User story for home screen list of users (still working on photograph uploads)
+
+<img src="http://g.recordit.co/R7DyzxCCcC.gif">
+
 * User can view an individual person's profile, including bio and interests
 * User can add comments to a person's profile
 
@@ -49,6 +54,10 @@ User story demonstration for log in and sign up:
 * User can connect with another individual
 * User can edit the background color of their profile
 * User can send a referral link to others to invite them to join Friendos
+
+User story demo for referral links:
+
+<img src="http://g.recordit.co/n5TRqrjuSi.gif">
 
 **Optional Nice-to-have Stories**
 ### Tier 3

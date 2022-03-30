@@ -52,6 +52,11 @@ User story for home screen list of users (still working on photograph uploads)
 * User can add new interests to their list
 * User can add a location to their profile
 * User can connect with another individual
+
+User accepting and rejecting connections
+
+<img src="http://g.recordit.co/jpq2HP0iCJ.gif">
+
 * User can edit the background color of their profile
 * User can send a referral link to others to invite them to join Friendos
 

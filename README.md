@@ -27,38 +27,41 @@ Creates a profile for a user based on hobbies they enjoy, and connects them with
 **Required Must-have Stories**
 ### Tier 1
 
-* User signs up for app
-* User logs into app
+- [x] User signs up for app
+- [x] User logs into app
 
 User story demonstration for log in and sign up:
 
 <img src="http://g.recordit.co/UMb6JVRIjx.gif">
 
+- [ ] User can edit profile screen, including adding interest and a bio
+- [x] User can view their own bio
 
+Demo of user viewing bio
 
-* User can edit profile screen, including adding interest and a bio
-* User can view their own bio
-* User can see a list of people using the app
+<img src="http://g.recordit.co/s3xBmkVi13.gif">
+
+- [x] User can see a list of people using the app
 
 User story for home screen list of users (still working on photograph uploads)
 
 <img src="http://g.recordit.co/R7DyzxCCcC.gif">
 
-* User can view an individual person's profile, including bio and interests
-* User can add comments to a person's profile
+- [ ]  User can view an individual person's profile, including bio and interests
+- [ ]  User can add comments to a person's profile
 
 ### Tier 2
 
-* User can add new interests to their list
-* User can add a location to their profile
-* User can connect with another individual
+- [ ]  User can add new interests to their list
+- [ ]  User can add a location to their profile
+- [ ] User can connect with another individual
 
 User accepting and rejecting connections
 
 <img src="http://g.recordit.co/jpq2HP0iCJ.gif">
 
-* User can edit the background color of their profile
-* User can send a referral link to others to invite them to join Friendos
+- [ ] User can edit the background color of their profile
+- [x] User can send a referral link to others to invite them to join Friendos
 
 User story demo for referral links:
 
@@ -67,10 +70,10 @@ User story demo for referral links:
 **Optional Nice-to-have Stories**
 ### Tier 3
 
-* User can create and use a group chat based on Facebook Messenger API
-* User can add a story that links keywords
-* User can further customize their individual profile
-* User logs into app via Facebook API authentication
+- [ ] User can create and use a group chat based on Facebook Messenger API
+- [ ] User can add a story that links keywords
+- [ ] User can further customize their individual profile
+- [ ] User logs into app via Facebook API authentication
 
 ### 2. Screen Archetypes
 

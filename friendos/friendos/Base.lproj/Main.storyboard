@@ -254,7 +254,7 @@
             </objects>
             <point key="canvasLocation" x="187" y="2048"/>
         </scene>
-        <!--Connections View Controller-->
+        <!--Friend Requests-->
         <scene sceneID="uFT-9H-wSB">
             <objects>
                 <viewController id="iS1-gF-ILc" customClass="ConnectionsViewController" customModule="friendos" customModuleProvider="target" sceneMemberID="viewController">
@@ -324,7 +324,7 @@
                         <viewLayoutGuide key="safeArea" id="Iiv-6L-qZD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Sgv-VM-1tM"/>
+                    <navigationItem key="navigationItem" title="Friend Requests" id="Sgv-VM-1tM"/>
                     <connections>
                         <outlet property="connectionTableView" destination="t1u-ZN-C2m" id="AKy-zz-vI2"/>
                     </connections>

@@ -19,7 +19,7 @@ class ConnectionCell: UITableViewCell {
     var request: PFObject!
     
     @IBAction func onRejectConnection(_ sender: Any) {
-        //request["accepted"] = false
+        request["accepted"] = false
         request.saveInBackground { success, error in
             if success {
                 self.delegate?.didTapConnectionButton()

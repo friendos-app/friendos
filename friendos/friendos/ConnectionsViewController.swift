@@ -40,6 +40,9 @@ class ConnectionsViewController: UIViewController, UITableViewDataSource, UITabl
             let connection = self.connectionRequests[indexPath.row]
             let requestor = connection["requestor"] as! PFUser
             
+            cell.acceptButton.isHidden = false
+            cell.rejectButton.isHidden = false
+            
             cell.usernameLabel.text = requestor["username"] as! String
             cell.request = connection
             cell.delegate = self

@@ -131,6 +131,12 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
          let indexPath = UserProfiles.indexPath(for: cell)!
          let user = user_list[indexPath.row]
          
+//         if let imageFile = user?["image"] as? PFFileObject {
+//             let urlString = imageFile.url!
+//             let url = URL(string: urlString)!
+//             userImage.af.setImage(withURL: url)
+//         }
+         
          //Send userName as a string from HomeViewController to ProfileViewCOntroller
          let new_username = user["username"] as? String
          let username_dict = ["username":new_username]
@@ -144,6 +150,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
          UserCellViewController.user = bio_dict
          print("Sending username to UserCellViewController")
          print("Sending user bio to UserCellViewController")
+         
+         UserCellViewController.user2 = user
          
          
          

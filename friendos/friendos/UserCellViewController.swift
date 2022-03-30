@@ -7,6 +7,7 @@
 
 import UIKit
 import Parse
+import AlamofireImage
 
 class UserCellViewController: UIViewController {
 
@@ -16,12 +17,23 @@ class UserCellViewController: UIViewController {
     
     var user: [String:Any]!
     var userName: [String:Any]!
+    var user2: PFObject!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         userBio.text = user["bio"] as? String
         userUsername.text = userName["username"] as? String
+        
+        print(user)
+        
+        if let imageFile = user2?["image"] as? PFFileObject {
+            let urlString = imageFile.url!
+            let url = URL(string: urlString)!
+            userImage.af.setImage(withURL: url)
+        }
+    
+        
         
         // Do any additional setup after loading the view.
 //        print(user[""])

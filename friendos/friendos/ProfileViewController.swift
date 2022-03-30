@@ -10,6 +10,7 @@ import Parse
 
 class ProfileViewController: UIViewController {
     
+    @IBOutlet weak var profilePhotoView: UIImageView!
     
     @IBOutlet weak var usernameLabel: UILabel!
     
@@ -48,9 +49,20 @@ class ProfileViewController: UIViewController {
                     self.user_list = cur_user_object
                     print("AHAHA = ", self.user_list)
                     
-                    
                     usernameLabel.text = user_list[0]["username"] as? String
                     userBio.text = user_list[0]["bio"] as? String
+                    
+                    let imageFile = user?["image"] as! PFFileObject
+                    let urlString = imageFile.url!
+                    let url = URL(string: urlString)!
+                    profilePhotoView.af.setImage(withURL: url)
+                    
+//                    let urlString = imageFile.url!
+//                    let url = URL(string: urlString)!
+//
+//                    cell.photoView.af.setImage(withURL: url)
+                    
+                    
                 }
             }
             
@@ -61,6 +73,61 @@ class ProfileViewController: UIViewController {
         
         
         // Do any additional setup after loading the view.
+    }
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        super.viewDidAppear(animated)
+        //self.viewDidLoad()
+        
+        // User is set to current logged in user.
+        let user = PFUser.current()
+        print("user here = ", user)
+        print(user!["username"])
+
+        
+        // Get the objectId of the current user.
+        let cur_user_object_id = user?["objectId"]
+        print("cur_user_object_id = ", cur_user_object_id)
+        
+        
+        // Set up query.
+        let query = PFUser.query()
+        print("cur_query = ", query)
+    
+        
+        query!.whereKey("username", equalTo: user!["username"])
+
+        query!.findObjectsInBackground(block: { [self] (objects, error) in
+            if (error == nil) {
+                if let cur_user_object = objects {
+                    self.user_list = cur_user_object
+                    print("AHAHA = ", self.user_list)
+                    
+                    usernameLabel.text = user_list[0]["username"] as? String
+                    userBio.text = user_list[0]["bio"] as? String
+                    
+                    let imageFile = user?["image"] as! PFFileObject
+                    let urlString = imageFile.url!
+                    let url = URL(string: urlString)!
+                    profilePhotoView.af.setImage(withURL: url)
+                    
+//                    let urlString = imageFile.url!
+//                    let url = URL(string: urlString)!
+//
+//                    cell.photoView.af.setImage(withURL: url)
+                    
+                    
+                }
+            }
+            
+            else {
+                print("error here")
+            }
+        })
+        
+        
     }
     
 

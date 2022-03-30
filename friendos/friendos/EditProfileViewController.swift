@@ -7,6 +7,7 @@
 
 import UIKit
 import AlamofireImage
+import Parse
 
 class EditProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -16,7 +17,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var bioField: UITextField!
     
     
-    
+
     
     
     override func viewDidLoad() {
@@ -30,6 +31,30 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     }
     
     @IBAction func submitEdit(_ sender: Any) {
+        
+        let user = PFUser.current()
+        
+        user?["bio"] = bioField.text
+        
+        let imageData = imageView.image!.pngData()!
+        let file = PFFileObject(name: "profileImage.png", data: imageData)
+        
+        user?["image"] = file
+        
+        user?.saveInBackground(block: { success, error in
+            if (success) {
+                print("Save worK!")
+                self.dismiss(animated: true, completion: nil)
+            }
+            
+            else {
+                print("Save no work!")
+            }
+        })
+        
+        
+
+            
     }
     
     @IBAction func onCameraButton(_ sender: Any) {
@@ -54,7 +79,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         let image = info[.editedImage] as! UIImage
      
         let size = CGSize(width: 300, height: 300)
-        let scaledImage = image.af_imageScaled(to: size)
+        let scaledImage = image.af.imageScaled(to: size)
         
         imageView.image = scaledImage
         

@@ -62,9 +62,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         //print("user = ", user)
         
   
-        let user_object_id = user?["objectId"]
-        print("user_object_id = ", user_object_id)
-        
+        let user_name = user?["username"]
+
         
         // Find interests
         let query = PFUser.query()
@@ -72,7 +71,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         
         //query.includeKey("interest_id")
-        query!.whereKey("objectId", notEqualTo: user_object_id)
+        query!.whereKey("username", notEqualTo: user_name)
     
         
 

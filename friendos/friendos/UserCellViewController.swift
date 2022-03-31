@@ -22,10 +22,13 @@ class UserCellViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        userImage.layer.borderWidth = 6
+        userBio.layer.borderWidth = 6
+        
         userBio.text = user["bio"] as? String
         userUsername.text = userName["username"] as? String
         
-        print(user)
+        
         
         if let imageFile = user2?["image"] as? PFFileObject {
             let urlString = imageFile.url!

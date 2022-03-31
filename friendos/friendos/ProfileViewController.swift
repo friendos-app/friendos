@@ -25,6 +25,10 @@ class ProfileViewController: UIViewController {
         
         super.viewDidLoad()
         
+        profilePhotoView.layer.borderWidth = 6
+        userBio.layer.borderWidth = 6
+        //profilePhotoView.layer.borderColor =
+        
         // User is set to current logged in user.
         let user = PFUser.current()
         print("user here = ", user)

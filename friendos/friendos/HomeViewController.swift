@@ -7,6 +7,7 @@
 
 import UIKit
 import Parse
+import AlamofireImage
 
 class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -39,6 +40,14 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
         else {
             cell.UserBio!.text = "User has empty bio" 
+        }
+        
+        if let imageFile = cur_user["image"] as? PFFileObject {
+            let urlString = imageFile.url!
+            print(urlString)
+            let url = URL(string: urlString)!
+            cell.UserImage.af.setImage(withURL: url)
+            //cell.af.setImage(withURL: url)
         }
         
         return cell

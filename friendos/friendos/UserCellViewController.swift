@@ -13,6 +13,7 @@ class UserCellViewController: UIViewController {
     
     @IBOutlet weak var onSubmitButton: UIButton!
     
+    var friends = false
     
     @IBAction func onSubmitRequest(_ sender: Any) {
         
@@ -57,12 +58,50 @@ class UserCellViewController: UIViewController {
         userBio.text = user["bio"] as? String
         userUsername.text = userName["username"] as? String
         
-        
+        self.onSubmitButton.isHidden = self.friends
         
         if let imageFile = user2?["image"] as? PFFileObject {
             let urlString = imageFile.url!
             let url = URL(string: urlString)!
             userImage.af.setImage(withURL: url)
+        }
+        
+        let query = PFQuery(className: "Connections")
+        query.whereKey("requestor", equalTo: PFUser.current())
+        query.whereKey("target_user", equalTo: user2)
+        query.whereKeyDoesNotExist("accepted")
+
+        let query2 = PFQuery(className: "Connections")
+        query2.whereKey("target_user", equalTo: PFUser.current())
+        query2.whereKey("requestor", equalTo: user2)
+        query.whereKeyDoesNotExist("accepted")
+
+        // Query the DB to find friends
+        query.findObjectsInBackground { query1_res, error1 in
+            if (error1 == nil) {
+                query2.findObjectsInBackground { query2_res, error2 in
+                    if (error2 == nil) {
+                        var connections = [PFObject]()
+                        connections.append(contentsOf: query1_res!)
+                        connections.append(contentsOf: query2_res!)
+                        
+                        if connections.count > 0 {
+                            self.onSubmitButton.isHidden = true
+                        }
+                        
+                        
+                        
+                    } else {
+                        print("\(error2)")
+                    }
+                }
+                
+                
+                
+            } else {
+                print("\(query1_res)")
+                print("\(error1)")
+            }
         }
     
         

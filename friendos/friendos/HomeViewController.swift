@@ -42,20 +42,37 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         query2.whereKey("requestor", equalTo: cur_user)
         query2.whereKey("accepted", equalTo: true)
 
-//        query.findObjectsInBackground { (query1_res, error) in
-//            if (error) {
-//                print("FAIL!")
-//            }
-//            
-//            else {
-//                
-//            }
-//        }
+        // Query the DB to find friends
+        query.findObjectsInBackground { query1_res, error1 in
+            if (error1 == nil) {
+                query2.findObjectsInBackground { query2_res, error2 in
+                    if (error2 == nil) {
+                        var connections = [PFObject]()
+                        connections.append(contentsOf: query1_res!)
+                        connections.append(contentsOf: query2_res!)
+                        
+                        if connections.count > 0 {
+                            cell.friendIcon.isHidden = false
+                        } else {
+                            cell.friendIcon.isHidden = true
+                        }
+                        
+                        
+                        
+                    } else {
+                        print("\(error2)")
+                    }
+                }
+                
+                
+                
+            } else {
+                print("\(query1_res)")
+                print("\(error1)")
+            }
+        }
         
-        print("*****")
-        
-        print(cur_user)
-        print("*****")
+
         
         cell.UserUsername!.text = cur_user["username"] as! String
         
@@ -159,7 +176,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
 //        // Get the new view controller using segue.destination.
 //        // Pass the selected object to the new view controller.
          print("Loading up the userdetails screen")
-         let cell = sender as! UITableViewCell
+         let cell = sender as! UserCell
          let indexPath = UserProfiles.indexPath(for: cell)!
          let user = user_list[indexPath.row]
          
@@ -176,12 +193,18 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
          let new_bio = user["bio"] as? String
          let bio_dict = ["bio":new_bio]
          
+
+         
          // Segue information to UserCellViewController as Strings
          let UserCellViewController = segue.destination as! UserCellViewController
          UserCellViewController.userName = username_dict
          UserCellViewController.user = bio_dict
          print("Sending username to UserCellViewController")
          print("Sending user bio to UserCellViewController")
+         // Set add friend to be invisible if the users are friends
+         if cell.friendIcon.isHidden == false {
+             UserCellViewController.friends = true
+         }
          
          UserCellViewController.user2 = user
          

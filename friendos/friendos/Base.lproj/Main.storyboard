@@ -392,6 +392,10 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="person.fill.checkmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="G6X-3D-VWC">
+                                                    <rect key="frame" x="363" y="6.5" width="40" height="53"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
@@ -410,6 +414,7 @@
                                             <outlet property="UserBio" destination="FwA-FT-NGt" id="aU6-fr-HOL"/>
                                             <outlet property="UserImage" destination="156-YL-YCM" id="5Gh-sn-62P"/>
                                             <outlet property="UserUsername" destination="vLt-0T-k0l" id="4Oi-pG-SS5"/>
+                                            <outlet property="friendIcon" destination="G6X-3D-VWC" id="4uA-zs-eTc"/>
                                             <segue destination="UUy-ac-zff" kind="show" id="2bQ-9Z-JE4"/>
                                         </connections>
                                     </tableViewCell>
@@ -621,6 +626,7 @@
         <image name="image_placeholder" width="375" height="375"/>
         <image name="magazine" catalog="system" width="113" height="128"/>
         <image name="person.circle" catalog="system" width="128" height="121"/>
+        <image name="person.fill.checkmark" catalog="system" width="128" height="88"/>
         <image name="x.square" catalog="system" width="128" height="114"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

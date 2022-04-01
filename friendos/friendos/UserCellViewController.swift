@@ -10,6 +10,35 @@ import Parse
 import AlamofireImage
 
 class UserCellViewController: UIViewController {
+    
+    @IBOutlet weak var onSubmitButton: UIButton!
+    
+    
+    @IBAction func onSubmitRequest(_ sender: Any) {
+        
+        //let cur_user = PFUser.current()
+        
+        print(user2["username"])
+        
+        var parseObject = PFObject(className:"Connections")
+
+        parseObject["requestor"] = PFUser.current()
+        parseObject["target_user"] = user2
+        // parseObject["accepted"] = true
+
+        // Saves the new object.
+        parseObject.saveInBackground {
+          (success: Bool, error: Error?) in
+          if (success) {
+              // The object has been saved.
+              self.onSubmitButton.isHidden = true
+            
+          } else {
+            // There was a problem, check error.description
+          }
+        }
+    }
+    
 
     @IBOutlet weak var userUsername: UILabel!
     @IBOutlet weak var userImage: UIImageView!

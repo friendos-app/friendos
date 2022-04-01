@@ -18,6 +18,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     // List of users that are not the current user.
     var user_list = [PFObject]()
     
+    // List of all the connections in the db.
+    var connections_list = [PFObject]()
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.user_list.count
@@ -26,10 +28,32 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        let cur_user = user_list[indexPath.row]
+        
         let cell = UserProfiles.dequeueReusableCell(withIdentifier: "UserCell") as! UserCell
         
+        let query = PFQuery(className: "Connections")
+        query.whereKey("requestor", equalTo: PFUser.current())
+        query.whereKey("target_user", equalTo: cur_user)
+        query.whereKey("accepted", equalTo: true)
+
+        let query2 = PFQuery(className: "Connections")
+        query2.whereKey("target_user", equalTo: PFUser.current())
+        query2.whereKey("requestor", equalTo: cur_user)
+        query2.whereKey("accepted", equalTo: true)
+
+//        query.findObjectsInBackground { (query1_res, error) in
+//            if (error) {
+//                print("FAIL!")
+//            }
+//            
+//            else {
+//                
+//            }
+//        }
+        
         print("*****")
-        let cur_user = user_list[indexPath.row]
+        
         print(cur_user)
         print("*****")
         

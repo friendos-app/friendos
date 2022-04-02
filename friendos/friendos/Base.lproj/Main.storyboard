@@ -96,37 +96,75 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" semanticContentAttribute="spatial" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="user bio" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tZ0-R4-B6k">
-                                <rect key="frame" x="20" y="534" width="374" height="218"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="25"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="User Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zhQ-ja-kLL" userLabel="UsernameLabel">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zhQ-ja-kLL" userLabel="UsernameLabel">
                                 <rect key="frame" x="31" y="122" width="250" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Vc-zD-634">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3Vc-zD-634">
                                 <rect key="frame" x="20" y="229" width="374" height="319"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="3Vc-zD-634" secondAttribute="height" multiplier="34:29" id="em5-R9-YmD"/>
+                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="25"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KXG-mQ-fct">
+                                <rect key="frame" x="20" y="568" width="384" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" semanticContentAttribute="spatial" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="user bio" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tZ0-R4-B6k">
+                                        <rect key="frame" x="10" y="10" width="364" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="25"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="tZ0-R4-B6k" firstAttribute="leading" secondItem="KXG-mQ-fct" secondAttribute="leading" constant="10" id="1bX-9g-hkM"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="J5N-sd-fsh"/>
+                                    <constraint firstAttribute="bottom" secondItem="tZ0-R4-B6k" secondAttribute="bottom" constant="10" id="RfD-W3-NeJ"/>
+                                    <constraint firstItem="tZ0-R4-B6k" firstAttribute="top" secondItem="KXG-mQ-fct" secondAttribute="top" constant="10" id="pZi-MQ-XJy"/>
+                                    <constraint firstAttribute="trailing" secondItem="tZ0-R4-B6k" secondAttribute="trailing" constant="10" id="xW2-AK-TDw"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Interests" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uoq-c8-9u8">
+                                <rect key="frame" x="20" y="638" width="374" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3IF-TC-AXK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Uoq-c8-9u8" firstAttribute="leading" secondItem="3IF-TC-AXK" secondAttribute="leading" constant="20" id="1Pt-07-UMJ"/>
+                            <constraint firstItem="3Vc-zD-634" firstAttribute="leading" secondItem="3IF-TC-AXK" secondAttribute="leading" constant="20" id="52x-fa-FyH"/>
+                            <constraint firstItem="zhQ-ja-kLL" firstAttribute="top" secondItem="3IF-TC-AXK" secondAttribute="top" constant="34" id="6qg-XV-XCi"/>
+                            <constraint firstItem="3Vc-zD-634" firstAttribute="top" secondItem="zhQ-ja-kLL" secondAttribute="bottom" constant="65" id="DkK-xm-6LX"/>
+                            <constraint firstItem="Uoq-c8-9u8" firstAttribute="top" secondItem="KXG-mQ-fct" secondAttribute="bottom" constant="20" id="KXQ-i5-dgM"/>
+                            <constraint firstItem="tZ0-R4-B6k" firstAttribute="top" secondItem="3Vc-zD-634" secondAttribute="bottom" constant="30" id="Mvc-Bh-9nd"/>
+                            <constraint firstItem="zhQ-ja-kLL" firstAttribute="leading" secondItem="3IF-TC-AXK" secondAttribute="leading" constant="31" id="U2E-Bu-L1O"/>
+                            <constraint firstItem="3IF-TC-AXK" firstAttribute="trailing" secondItem="KXG-mQ-fct" secondAttribute="trailing" constant="10" id="Y7i-1t-iev"/>
+                            <constraint firstItem="KXG-mQ-fct" firstAttribute="leading" secondItem="3IF-TC-AXK" secondAttribute="leading" constant="20" id="pPp-Ch-vkb"/>
+                            <constraint firstItem="3IF-TC-AXK" firstAttribute="trailing" secondItem="Uoq-c8-9u8" secondAttribute="trailing" constant="20" id="wGA-ZA-OQa"/>
+                            <constraint firstItem="3Vc-zD-634" firstAttribute="centerX" secondItem="Y4W-na-rSL" secondAttribute="centerX" id="wOh-Iy-WeM"/>
+                            <constraint firstItem="3IF-TC-AXK" firstAttribute="trailing" secondItem="3Vc-zD-634" secondAttribute="trailing" constant="20" id="y6I-FV-wat"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="zFw-GR-9iG">
                         <barButtonItem key="rightBarButtonItem" title="Edit" id="whz-kL-FmL">
@@ -136,6 +174,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="bioView" destination="KXG-mQ-fct" id="5n4-uR-jmJ"/>
                         <outlet property="profilePhotoView" destination="3Vc-zD-634" id="yNx-yv-hms"/>
                         <outlet property="userBio" destination="tZ0-R4-B6k" id="zts-l0-Dlm"/>
                         <outlet property="usernameLabel" destination="zhQ-ja-kLL" id="aev-1o-BFj"/>

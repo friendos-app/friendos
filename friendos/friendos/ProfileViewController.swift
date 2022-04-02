@@ -12,6 +12,7 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var profilePhotoView: UIImageView!
     
+    @IBOutlet weak var bioView: UIView!
     @IBOutlet weak var usernameLabel: UILabel!
     
     @IBOutlet weak var userBio: UILabel!
@@ -25,8 +26,11 @@ class ProfileViewController: UIViewController {
         
         super.viewDidLoad()
         
+        
         profilePhotoView.layer.borderWidth = 6
-        userBio.layer.borderWidth = 6
+        bioView.layer.borderWidth = 6
+        bioView.layer.borderColor = UIColor.black.cgColor
+        //userBio.layer.borderWidth = 6
         
         //profilePhotoView.layer.borderColor =
         

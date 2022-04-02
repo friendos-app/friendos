@@ -15,6 +15,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var bioView: UIView!
     @IBOutlet weak var usernameLabel: UILabel!
     
+    @IBOutlet weak var interestLabel: UILabel!
     @IBOutlet weak var userBio: UILabel!
     
     
@@ -73,6 +74,31 @@ class ProfileViewController: UIViewController {
                     
                     
                 }
+                
+                // Setup query for user interests
+                let interest_query = PFQuery(className: "UserInterests")
+                interest_query.includeKey("interest_id")
+                interest_query.whereKey("user_id", equalTo: user)
+                
+                // Run query and populate interests section
+                interest_query.findObjectsInBackground { objects, error in
+                    
+                    if let interests = objects {
+                        
+                        var interest_list = ""
+                        for interest in interests {
+                            let interest_obj = interest["interest_id"] as! PFObject
+                            let interest_str = interest_obj["interest"] as! String
+                            interest_list = interest_list + interest_str + ", "
+                        }
+                        interest_list.removeLast(2)
+                        interest_list = "Interests: " + interest_list
+                        
+                        interestLabel.text = interest_list
+                        
+                    }
+                }
+                
             }
             
             else {

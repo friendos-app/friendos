@@ -175,6 +175,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="bioView" destination="KXG-mQ-fct" id="5n4-uR-jmJ"/>
+                        <outlet property="interestLabel" destination="Uoq-c8-9u8" id="xLv-fX-Qxy"/>
                         <outlet property="profilePhotoView" destination="3Vc-zD-634" id="yNx-yv-hms"/>
                         <outlet property="userBio" destination="tZ0-R4-B6k" id="zts-l0-Dlm"/>
                         <outlet property="usernameLabel" destination="zhQ-ja-kLL" id="aev-1o-BFj"/>

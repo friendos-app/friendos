@@ -49,11 +49,25 @@ class UserCellViewController: UIViewController {
     var user: [String:Any]!
     var userName: [String:Any]!
     var user2: PFObject!
+    // Holds current background color
+    var background_color = UIColor()
     @IBOutlet weak var interestsView: UIView!
     @IBOutlet weak var interestsLabel: UILabel!
     
+    // Update background colors
+    func updateColors() {
+        // Setup background color
+        if let background_color_string = UserDefaults.standard.string(forKey: "background_color") {
+            self.background_color = UIColor(named: background_color_string)!
+            view.backgroundColor = self.background_color
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Set background color
+        updateColors()
 
         userImage.layer.borderWidth = 6
         bioView.layer.borderWidth = 6
@@ -69,6 +83,9 @@ class UserCellViewController: UIViewController {
         self.onSubmitButton.isHidden = self.friends
         
         self.getInterests()
+        
+        
+        // Set up colors
         
         if let imageFile = user2?["image"] as? PFFileObject {
             let urlString = imageFile.url!
@@ -153,14 +170,11 @@ class UserCellViewController: UIViewController {
             }
         }
     }
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        updateColors()
     }
-    */
 
 }

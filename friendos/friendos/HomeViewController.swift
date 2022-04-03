@@ -21,16 +21,36 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     // List of all the connections in the db.
     var connections_list = [PFObject]()
     
+    // Holds current background color
+    var background_color = UIColor()
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.user_list.count
     }
     
+    
+    // Update background colors
+    func updateColors() {
+        // Setup background color
+        if let background_color_string = UserDefaults.standard.string(forKey: "background_color") {
+            print(background_color_string)
+            self.background_color = UIColor(named: background_color_string)!
+            view.backgroundColor = self.background_color
+            UserProfiles.backgroundColor = self.background_color
+        }
+    }
+    
+    // Set color of table view cells
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.contentView.backgroundColor = self.background_color
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cur_user = user_list[indexPath.row]
         
         let cell = UserProfiles.dequeueReusableCell(withIdentifier: "UserCell") as! UserCell
+        
         
         let query = PFQuery(className: "Connections")
         query.whereKey("requestor", equalTo: PFUser.current())
@@ -97,7 +117,15 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     
 
-  
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // Update colors
+        self.updateColors()
+        
+        self.UserProfiles.reloadData()
+        
+    }
     
     
 
@@ -105,7 +133,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         super.viewDidLoad()
         
-        print("help")
+
+        // Update the background color
+        self.updateColors()
         
         let user = PFUser.current()
         // Get user bio and photo

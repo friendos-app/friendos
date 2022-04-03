@@ -17,13 +17,21 @@ class LoginViewController: UIViewController {
     // Runs upon view loading
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let background_color = UserDefaults.standard.string(forKey: "background_color") {
+            view.backgroundColor = UIColor(named: background_color)
+        }
 
-        // Do any additional setup after loading the view.
     }
     
     // Check if user is logged in and segue to home screen if so
     override func viewDidAppear(_ animated: Bool) {
         if UserDefaults.standard.bool(forKey: "userLoggedIn") == true {
+            
+            // Set up background color
+            let user = PFUser.current()
+            UserDefaults.standard.set(user?["background_color"], forKey: "background_color")
+            
             self.performSegue(withIdentifier: "goLoginHome", sender: self)
         }
     }
@@ -35,6 +43,7 @@ class LoginViewController: UIViewController {
         user.password = passwordText.text
         // Set up users referral link
         user["referal_link"] = "https://getfriendos.com/" + self.userNameText.text!
+        user["background_color"] = "FriendosBlue"
         
         // Attempt to sign the user up
         user.signUpInBackground { success, error in
@@ -43,6 +52,7 @@ class LoginViewController: UIViewController {
                 print(errorString)
             } else {
                 UserDefaults.standard.set(true, forKey: "userLoggedIn")
+                UserDefaults.standard.set("FriendosBlue", forKey: "background_color")
                 self.performSegue(withIdentifier: "goLoginProfile", sender: nil)
             }
         }
@@ -58,6 +68,11 @@ class LoginViewController: UIViewController {
           if user != nil {
               print("login success")
               UserDefaults.standard.set(true, forKey: "userLoggedIn")
+              
+              // Set up background color
+              let user = PFUser.current()
+              UserDefaults.standard.set(user?["background_color"], forKey: "background_color")
+              
               self.performSegue(withIdentifier: "goLoginHome", sender: nil)
           } else {
               print(error!.localizedDescription)

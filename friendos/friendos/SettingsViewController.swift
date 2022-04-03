@@ -13,14 +13,36 @@ class SettingsViewController: UIViewController  {
     var cancellable: Any?
     let curUser = PFUser.current()
     
+    @IBOutlet weak var friendosBlueButton: UIButton!
+    @IBOutlet weak var friendosPinkButton: UIButton!
+    
+    
+    
+    
+    
     @IBAction func onLogoutTouch(_ sender: Any) {
         PFUser.logOutInBackground()
         UserDefaults.standard.set(false, forKey: "userLoggedIn")
         self.dismiss(animated: true, completion: nil)
     }
     
-    
+    @IBAction func onFreindosBlueTouch(_ sender: Any) {
+        view.backgroundColor = UIColor(named: "FriendosBlue")
+        UserDefaults.standard.set("FriendosBlue", forKey: "background_color")
+        // Save the color to the DB
+        curUser?["background_color"] = "FriendosBlue"
+        curUser?.saveInBackground()
 
+    }
+    
+    @IBAction func onFriendosPinkTouch(_ sender: Any) {
+        view.backgroundColor = UIColor(named: "FriendosPink")
+        UserDefaults.standard.set("FriendosPink", forKey: "background_color")
+        // Save the color to the DB
+        curUser?["background_color"] = "FriendosPink"
+        curUser?.saveInBackground()
+    }
+    
     
     // Copy referal link to clipboard
     @IBAction func onCopyTouch(_ sender: Any) {
@@ -39,12 +61,14 @@ class SettingsViewController: UIViewController  {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Set background color
+        view.backgroundColor = UIColor(named: UserDefaults.standard.string(forKey: "background_color")!)
 
-        // Set the referall link to the correct value
-
+        friendosBlueButton.layer.borderWidth = 3
+        friendosBlueButton.layer.cornerRadius = 10
+        friendosPinkButton.layer.borderWidth = 3
+        friendosPinkButton.layer.cornerRadius = 10
     }
 }
 
-// Save the color to the DB
-//curUser?["background_color"] = "\(red)-\(green)-\(blue)-\(alpha)"
-//curUser?.saveInBackground()

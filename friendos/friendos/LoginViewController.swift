@@ -20,6 +20,8 @@ class LoginViewController: UIViewController {
         
         if let background_color = UserDefaults.standard.string(forKey: "background_color") {
             view.backgroundColor = UIColor(named: background_color)
+        } else {
+            UserDefaults.standard.set("FriendosBlue", forKey: "background_color")
         }
 
     }

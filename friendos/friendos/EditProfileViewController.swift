@@ -25,6 +25,9 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Set up placeholder text color
+        bioField.attributedPlaceholder = NSAttributedString(string: "Enter new bio here...", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+        
         // Get the list of available interests
         let query = PFQuery(className: "Interests")
         

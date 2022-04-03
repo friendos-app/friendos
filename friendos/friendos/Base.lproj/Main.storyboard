@@ -227,14 +227,14 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="26.5" id="xv7-W9-WIu"/>
                                 </constraints>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Interests" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MTO-Wk-R2C">
                                 <rect key="frame" x="20" y="583" width="119" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q9F-CT-DQw" customClass="MultiSelectSegmentedControl" customModule="MultiSelectSegmentedControl">
@@ -243,7 +243,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="DJp-dC-Ch8"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="FriendosBlue"/>
                         <constraints>
                             <constraint firstItem="MTO-Wk-R2C" firstAttribute="leading" secondItem="DJp-dC-Ch8" secondAttribute="leading" constant="20" id="3sj-qP-etx"/>
                             <constraint firstItem="Sdd-VC-8WI" firstAttribute="leading" secondItem="DJp-dC-Ch8" secondAttribute="leading" constant="20" id="5H9-R5-9pl"/>
@@ -259,11 +259,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="bhq-mQ-4LE">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="qhq-75-gbc">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="cancel:" destination="CtL-sa-OXx" id="7Ag-yf-09a"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Submit" id="AMe-Nb-kWP">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="submitEdit:" destination="CtL-sa-OXx" id="9cr-da-Ir2"/>
                             </connections>
@@ -763,6 +765,13 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Pv1-eK-nE8">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" name="FriendosBlue"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

@@ -590,6 +590,25 @@
                                     <constraint firstAttribute="trailing" secondItem="Qt6-jb-6uH" secondAttribute="trailing" constant="10" id="a1W-2K-hh5"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XuJ-4n-OmZ">
+                                <rect key="frame" x="20" y="604" width="374" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Interests: Flying" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9C3-5r-DGp">
+                                        <rect key="frame" x="10" y="10" width="354" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="9C3-5r-DGp" firstAttribute="leading" secondItem="XuJ-4n-OmZ" secondAttribute="leading" constant="10" id="0r9-5K-MhQ"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="5ue-Cr-Fqy"/>
+                                    <constraint firstAttribute="trailing" secondItem="9C3-5r-DGp" secondAttribute="trailing" constant="10" id="be1-wZ-lCV"/>
+                                    <constraint firstItem="9C3-5r-DGp" firstAttribute="top" secondItem="XuJ-4n-OmZ" secondAttribute="top" constant="10" id="moq-qe-Vos"/>
+                                    <constraint firstAttribute="bottom" secondItem="9C3-5r-DGp" secondAttribute="bottom" constant="10" id="vhc-o3-Q4m"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="mhH-vO-bao"/>
                         <color key="backgroundColor" name="FriendosBlue"/>
@@ -597,9 +616,12 @@
                             <constraint firstItem="yoI-Nb-bYj" firstAttribute="top" secondItem="rd1-ss-6p0" secondAttribute="bottom" constant="21" id="5Jm-IS-ldp"/>
                             <constraint firstItem="tLw-MO-lt9" firstAttribute="top" secondItem="mhH-vO-bao" secondAttribute="top" constant="38" id="AUk-Tg-f9C"/>
                             <constraint firstItem="lkb-7a-Lgz" firstAttribute="top" secondItem="mhH-vO-bao" secondAttribute="top" constant="38" id="DpT-0c-d1z"/>
+                            <constraint firstItem="XuJ-4n-OmZ" firstAttribute="top" secondItem="yoI-Nb-bYj" secondAttribute="bottom" constant="26" id="IO2-6I-Cgz"/>
                             <constraint firstItem="mhH-vO-bao" firstAttribute="trailing" secondItem="tLw-MO-lt9" secondAttribute="trailing" constant="38" id="IUF-tE-bUs"/>
                             <constraint firstItem="yoI-Nb-bYj" firstAttribute="leading" secondItem="mhH-vO-bao" secondAttribute="leading" constant="20" id="QWj-JJ-byO"/>
                             <constraint firstItem="mhH-vO-bao" firstAttribute="trailing" secondItem="rd1-ss-6p0" secondAttribute="trailing" constant="20" id="W5T-vc-uLr"/>
+                            <constraint firstItem="mhH-vO-bao" firstAttribute="trailing" secondItem="XuJ-4n-OmZ" secondAttribute="trailing" constant="20" id="XoF-6B-Cne"/>
+                            <constraint firstItem="XuJ-4n-OmZ" firstAttribute="leading" secondItem="mhH-vO-bao" secondAttribute="leading" constant="20" id="aI2-oX-2eK"/>
                             <constraint firstItem="rd1-ss-6p0" firstAttribute="leading" secondItem="mhH-vO-bao" secondAttribute="leading" constant="20" id="aTM-Es-8UK"/>
                             <constraint firstItem="lkb-7a-Lgz" firstAttribute="leading" secondItem="mhH-vO-bao" secondAttribute="leading" constant="31" id="uER-Uo-maF"/>
                             <constraint firstItem="mhH-vO-bao" firstAttribute="trailing" secondItem="yoI-Nb-bYj" secondAttribute="trailing" constant="20" id="y2A-5b-9NJ"/>
@@ -609,6 +631,8 @@
                     <navigationItem key="navigationItem" id="LM1-MA-zjc"/>
                     <connections>
                         <outlet property="bioView" destination="yoI-Nb-bYj" id="Dwp-sC-HIN"/>
+                        <outlet property="interestsLabel" destination="9C3-5r-DGp" id="KmK-42-vaB"/>
+                        <outlet property="interestsView" destination="XuJ-4n-OmZ" id="Hmo-Xy-Lfw"/>
                         <outlet property="onSubmitButton" destination="tLw-MO-lt9" id="AtA-WZ-udB"/>
                         <outlet property="userBio" destination="Qt6-jb-6uH" id="r80-X4-5xk"/>
                         <outlet property="userImage" destination="rd1-ss-6p0" id="IXe-O2-Ggq"/>

@@ -49,6 +49,8 @@ class UserCellViewController: UIViewController {
     var user: [String:Any]!
     var userName: [String:Any]!
     var user2: PFObject!
+    @IBOutlet weak var interestsView: UIView!
+    @IBOutlet weak var interestsLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,6 +59,9 @@ class UserCellViewController: UIViewController {
         bioView.layer.borderWidth = 6
         bioView.layer.borderColor = UIColor.black.cgColor
         bioView.layer.cornerRadius = 8
+        interestsView.layer.borderWidth = 6
+        interestsView.layer.borderColor = UIColor.black.cgColor
+        interestsView.layer.cornerRadius = 8
         
         userBio.text = user["bio"] as? String
         userUsername.text = userName["username"] as? String

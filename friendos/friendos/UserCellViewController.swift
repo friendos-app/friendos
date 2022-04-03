@@ -13,6 +13,7 @@ class UserCellViewController: UIViewController {
     
     @IBOutlet weak var onSubmitButton: UIButton!
     
+    @IBOutlet weak var bioView: UIView!
     var friends = false
     
     @IBAction func onSubmitRequest(_ sender: Any) {
@@ -53,7 +54,9 @@ class UserCellViewController: UIViewController {
         super.viewDidLoad()
 
         userImage.layer.borderWidth = 6
-        userBio.layer.borderWidth = 6
+        bioView.layer.borderWidth = 6
+        bioView.layer.borderColor = UIColor.black.cgColor
+        bioView.layer.cornerRadius = 8
         
         userBio.text = user["bio"] as? String
         userUsername.text = userName["username"] as? String

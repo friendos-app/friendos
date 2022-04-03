@@ -22,21 +22,7 @@ class ProfileViewController: UIViewController {
     // user_list will just be a list with a single dictioary.
     var user_list = [PFObject]()
     
-
-    override func viewDidLoad() {
-        
-        super.viewDidLoad()
-        
-        
-        profilePhotoView.layer.borderWidth = 6
-        bioView.layer.borderWidth = 6
-        bioView.layer.borderColor = UIColor.black.cgColor
-        interestView.layer.borderWidth = 6
-        interestView.layer.borderColor = UIColor.black.cgColor
-        //userBio.layer.borderWidth = 6
-        
-        //profilePhotoView.layer.borderColor =
-        
+    func loadData() {
         // User is set to current logged in user.
         let user = PFUser.current()
         print("user here = ", user)
@@ -113,6 +99,23 @@ class ProfileViewController: UIViewController {
                 print("error here")
             }
         })
+    }
+
+    override func viewDidLoad() {
+        
+        super.viewDidLoad()
+        
+        
+        profilePhotoView.layer.borderWidth = 6
+        bioView.layer.borderWidth = 6
+        bioView.layer.borderColor = UIColor.black.cgColor
+        interestView.layer.borderWidth = 6
+        interestView.layer.borderColor = UIColor.black.cgColor
+        //userBio.layer.borderWidth = 6
+        
+        self.loadData()
+        
+        
         
         
         // Do any additional setup after loading the view.
@@ -124,81 +127,8 @@ class ProfileViewController: UIViewController {
         super.viewDidAppear(animated)
         //self.viewDidLoad()
         
-        // User is set to current logged in user.
-        let user = PFUser.current()
-        print("user here = ", user)
-        print(user!["username"])
-
-        
-        // Get the objectId of the current user.
-        let cur_user_object_id = user?["objectId"]
-        print("cur_user_object_id = ", cur_user_object_id)
-        
-        
-        // Set up query.
-        let query = PFUser.query()
-        print("cur_query = ", query)
-    
-        
-        query!.whereKey("username", equalTo: user!["username"])
-
-        query!.findObjectsInBackground(block: { [self] (objects, error) in
-            if (error == nil) {
-                if let cur_user_object = objects {
-                    self.user_list = cur_user_object
-                    print("AHAHA = ", self.user_list)
-                    
-                    usernameLabel.text = user_list[0]["username"] as? String
-                    userBio.text = user_list[0]["bio"] as? String
-                    
-                    if let imageFile = user?["image"] as? PFFileObject {
-                        let urlString = imageFile.url!
-                        let url = URL(string: urlString)!
-                        profilePhotoView.af.setImage(withURL: url)
-                    }
-//                    let urlString = imageFile.url!
-//                    let url = URL(string: urlString)!
-//
-//                    cell.photoView.af.setImage(withURL: url)
-                    
-                    
-                }
-                
-                // Setup query for user interests
-                let interest_query = PFQuery(className: "UserInterests")
-                interest_query.includeKey("interest_id")
-                interest_query.whereKey("user_id", equalTo: user)
-                
-                // Run query and populate interests section
-                interest_query.findObjectsInBackground { objects, error in
-                    
-                    if let interests = objects {
-                        
-                        var interest_list = ""
-                        for interest in interests {
-                            let interest_obj = interest["interest_id"] as! PFObject
-                            let interest_str = interest_obj["interest"] as! String
-                            interest_list = interest_list + interest_str + ", "
-                        }
-                        if interest_list == "" {
-                            interest_list = "no current interests"
-                        }
-                        else {
-                            interest_list.removeLast(2)
-                        }
-                        interest_list = "Interests: " + interest_list
-                        
-                        interestLabel.text = interest_list
-                        
-                    }
-                }
-                
-            }
-            
-            else {
-                print("error here")
-            }
-        })
+        // Reload database data
+        self.loadData()
         
         
     }

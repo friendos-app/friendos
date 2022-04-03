@@ -33,7 +33,7 @@ class LoginViewController: UIViewController {
             
             // Set up background color
             let user = PFUser.current()
-            UserDefaults.standard.set(user?["background_color"], forKey: "background_color")
+            UserDefaults.standard.set("FriendosBlue", forKey: "background_color")
             
             self.performSegue(withIdentifier: "goLoginHome", sender: self)
         }

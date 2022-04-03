@@ -167,6 +167,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3IF-TC-AXK"/>
+<<<<<<< Updated upstream
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="3IF-TC-AXK" firstAttribute="trailing" secondItem="HBs-dM-XCj" secondAttribute="trailing" constant="20" id="2df-AV-m7H"/>
@@ -182,9 +183,13 @@
                             <constraint firstItem="3Vc-zD-634" firstAttribute="centerX" secondItem="Y4W-na-rSL" secondAttribute="centerX" id="wOh-Iy-WeM"/>
                             <constraint firstItem="3IF-TC-AXK" firstAttribute="trailing" secondItem="3Vc-zD-634" secondAttribute="trailing" constant="20" id="y6I-FV-wat"/>
                         </constraints>
+=======
+                        <color key="backgroundColor" red="0.24640214439999999" green="0.46379369500000001" blue="0.63139432669999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+>>>>>>> Stashed changes
                     </view>
                     <navigationItem key="navigationItem" id="zFw-GR-9iG">
                         <barButtonItem key="rightBarButtonItem" title="Edit" id="whz-kL-FmL">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <segue destination="lLz-Ee-FDX" kind="presentation" id="3le-3T-QQG"/>
                             </connections>
@@ -266,14 +271,14 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adjust Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VDJ-XY-87Y">
                                 <rect key="frame" x="93.5" y="138" width="227.5" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g5X-WN-6Aw">
                                 <rect key="frame" x="20" y="361" width="172" height="38"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Copy referral link">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="onCopyTouch:" destination="rPV-aM-0r1" eventType="touchUpInside" id="aX1-fZ-O38"/>
@@ -284,6 +289,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Set Location">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vhe-w2-iBs">
@@ -291,6 +297,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Choose Background Color">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="onColorTouch:" destination="rPV-aM-0r1" eventType="touchUpInside" id="1TS-qN-yD4"/>
@@ -298,7 +305,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2RE-ra-7oD"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.24640214439999999" green="0.46379369500000001" blue="0.63139432669999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="DqA-c2-PFl" firstAttribute="top" secondItem="Vhe-w2-iBs" secondAttribute="bottom" constant="35" id="2h2-Q8-WIF"/>
                             <constraint firstItem="Vhe-w2-iBs" firstAttribute="top" secondItem="VDJ-XY-87Y" secondAttribute="bottom" constant="35" id="5Lm-He-HnV"/>
@@ -312,6 +319,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="dRg-50-fRC">
                         <barButtonItem key="rightBarButtonItem" title="Logout" id="Y4F-uU-xAL">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="onLogoutTouch:" destination="rPV-aM-0r1" id="he6-WE-HMp"/>
                             </connections>
@@ -390,7 +398,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Iiv-6L-qZD"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.24640214439999999" green="0.46379369500000001" blue="0.63139432669999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
                     <navigationItem key="navigationItem" title="Friend Requests" id="Sgv-VM-1tM"/>
                     <connections>
@@ -420,6 +428,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" red="0.24640214439999999" green="0.46379369500000001" blue="0.63139432669999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserCell" rowHeight="175" id="Uf8-Cx-IFT" customClass="UserCell" customModule="friendos" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="175"/>
@@ -455,7 +464,7 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                             </subviews>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="backgroundColor" red="0.24640214439999999" green="0.46379369500000001" blue="0.63139432669999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <constraints>
                                                 <constraint firstItem="156-YL-YCM" firstAttribute="top" secondItem="Xzn-RK-WN3" secondAttribute="top" constant="28" id="CMz-gK-kXx"/>
                                                 <constraint firstItem="vLt-0T-k0l" firstAttribute="leading" secondItem="156-YL-YCM" secondAttribute="trailing" constant="17" id="J1f-NJ-LQO"/>

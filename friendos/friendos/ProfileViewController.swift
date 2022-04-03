@@ -92,8 +92,14 @@ class ProfileViewController: UIViewController {
                             let interest_obj = interest["interest_id"] as! PFObject
                             let interest_str = interest_obj["interest"] as! String
                             interest_list = interest_list + interest_str + ", "
+                            
                         }
-                        interest_list.removeLast(2)
+                        if interest_list == "" {
+                            interest_list = "no current interests"
+                        }
+                        else {
+                            interest_list.removeLast(2)
+                        }
                         interest_list = "Interests: " + interest_list
                         
                         interestLabel.text = interest_list
@@ -174,7 +180,12 @@ class ProfileViewController: UIViewController {
                             let interest_str = interest_obj["interest"] as! String
                             interest_list = interest_list + interest_str + ", "
                         }
-                        interest_list.removeLast(2)
+                        if interest_list == "" {
+                            interest_list = "no current interests"
+                        }
+                        else {
+                            interest_list.removeLast(2)
+                        }
                         interest_list = "Interests: " + interest_list
                         
                         interestLabel.text = interest_list

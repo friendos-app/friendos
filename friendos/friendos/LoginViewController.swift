@@ -37,7 +37,13 @@ class LoginViewController: UIViewController {
         }
         
         // if we didn't segue, make sure background color is correct
-        view.backgroundColor = UIColor(named: UserDefaults.standard.string(forKey: "background_color")!)
+        if let cur_background = UserDefaults.standard.string(forKey: "background_color") {
+            view.backgroundColor = UIColor(named: cur_background)
+        } else {
+            UserDefaults.standard.set("FriendosBlue", forKey: "background_color")
+            view.backgroundColor = UIColor(named: "FriendosBlue")
+        }
+        
         
     }
     

@@ -211,23 +211,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="image_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="iMD-sH-Y8r">
-                                <rect key="frame" x="43" y="120" width="328" height="306"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="iMD-sH-Y8r">
+                                <rect key="frame" x="19.5" y="120" width="375" height="375"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="BYT-Mt-vwp" appends="YES" id="NYi-BD-Ll7"/>
                                 </connections>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="top" borderStyle="line" placeholder="Enter new bio here..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sdd-VC-8WI">
-                                <rect key="frame" x="43" y="457" width="328" height="183"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="top" borderStyle="line" placeholder="Enter new bio here..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sdd-VC-8WI">
+                                <rect key="frame" x="20" y="526" width="374" height="26.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="26.5" id="xv7-W9-WIu"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Interests" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MTO-Wk-R2C">
+                                <rect key="frame" x="20" y="583" width="119" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q9F-CT-DQw" customClass="MultiSelectSegmentedControl" customModule="MultiSelectSegmentedControl">
+                                <rect key="frame" x="20" y="614" width="374" height="150"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="DJp-dC-Ch8"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="MTO-Wk-R2C" firstAttribute="leading" secondItem="DJp-dC-Ch8" secondAttribute="leading" constant="20" id="3sj-qP-etx"/>
+                            <constraint firstItem="Sdd-VC-8WI" firstAttribute="leading" secondItem="DJp-dC-Ch8" secondAttribute="leading" constant="20" id="5H9-R5-9pl"/>
+                            <constraint firstItem="q9F-CT-DQw" firstAttribute="leading" secondItem="DJp-dC-Ch8" secondAttribute="leading" constant="20" id="AJn-uY-ji4"/>
+                            <constraint firstItem="iMD-sH-Y8r" firstAttribute="top" secondItem="DJp-dC-Ch8" secondAttribute="top" constant="32" id="LVx-LT-7KR"/>
+                            <constraint firstItem="Sdd-VC-8WI" firstAttribute="top" secondItem="iMD-sH-Y8r" secondAttribute="bottom" constant="31" id="V9Y-2q-PnJ"/>
+                            <constraint firstItem="DJp-dC-Ch8" firstAttribute="trailing" secondItem="q9F-CT-DQw" secondAttribute="trailing" constant="20" id="dI3-JQ-i1N"/>
+                            <constraint firstItem="q9F-CT-DQw" firstAttribute="top" secondItem="MTO-Wk-R2C" secondAttribute="bottom" constant="10" id="ge8-lv-epG"/>
+                            <constraint firstItem="iMD-sH-Y8r" firstAttribute="centerX" secondItem="DJp-dC-Ch8" secondAttribute="centerX" id="lmi-Cb-LUT"/>
+                            <constraint firstItem="DJp-dC-Ch8" firstAttribute="trailing" secondItem="Sdd-VC-8WI" secondAttribute="trailing" constant="20" id="yG9-pL-DZv"/>
+                            <constraint firstItem="MTO-Wk-R2C" firstAttribute="top" secondItem="Sdd-VC-8WI" secondAttribute="bottom" constant="30.5" id="ym6-Sw-sD3"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="bhq-mQ-4LE">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="qhq-75-gbc">
@@ -244,6 +267,7 @@
                     <connections>
                         <outlet property="bioField" destination="Sdd-VC-8WI" id="hAx-JP-d4X"/>
                         <outlet property="imageView" destination="iMD-sH-Y8r" id="uh0-ce-hlN"/>
+                        <outlet property="interestSelector" destination="q9F-CT-DQw" id="HJW-eI-iMn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bgY-oF-ZYb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

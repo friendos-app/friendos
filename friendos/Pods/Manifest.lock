@@ -6,14 +6,18 @@ PODS:
   - MessageInputBar (0.4.1):
     - MessageInputBar/Core (= 0.4.1)
   - MessageInputBar/Core (0.4.1)
+  - MultiSelectSegmentedControl (2.3.6):
+    - SweeterSwift
   - Parse (1.19.3):
     - Parse/Core (= 1.19.3)
   - Parse/Core (1.19.3):
     - Bolts/Tasks (= 1.9.1)
+  - SweeterSwift (1.2.0)
 
 DEPENDENCIES:
   - AlamofireImage
   - MessageInputBar
+  - MultiSelectSegmentedControl
   - Parse
 
 SPEC REPOS:
@@ -22,15 +26,19 @@ SPEC REPOS:
     - AlamofireImage
     - Bolts
     - MessageInputBar
+    - MultiSelectSegmentedControl
     - Parse
+    - SweeterSwift
 
 SPEC CHECKSUMS:
   Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
   AlamofireImage: 34a2d90b0e5fe6a5605f85ae4b7b01e784c60192
   Bolts: 8c1e8aab2f603387b8b9924f57d1d64f43d3ffdc
   MessageInputBar: e81c7535347f1f7b923de7080409a535a004b6e4
+  MultiSelectSegmentedControl: 37fcb70250c2e6ec0aff942c15c294161dc7c11b
   Parse: 0abb63a0ff6fa34a3f64b81d595a294e2ece143a
+  SweeterSwift: 31fa8cfbdc094d3ae41bafbeaf4bceed467ba5c7
 
-PODFILE CHECKSUM: 4eceafaa17b936dedcb4b624c9b01acff136b01d
+PODFILE CHECKSUM: f6cc36e6f87fbf0f3020e086cf042aafaf8d7496
 
 COCOAPODS: 1.11.2

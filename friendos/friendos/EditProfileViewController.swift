@@ -8,22 +8,42 @@
 import UIKit
 import AlamofireImage
 import Parse
+import MultiSelectSegmentedControl
 
 class EditProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var imageView: UIImageView!
-    
-    
     @IBOutlet weak var bioField: UITextField!
+    @IBOutlet weak var interestSelector: MultiSelectSegmentedControl!
     
-    
+    // Variable to hold interest
+    var interests_list: [String] = [String]()
+    var interest_objs: [PFObject] = [PFObject]()
 
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Get the list of available interests
+        let query = PFQuery(className: "Interests")
+        
+        
+        query.findObjectsInBackground { objects, error in
+            if let interests = objects {
+                self.interest_objs = interests
+                for interest in interests {
+                    self.interests_list.append(interest["interest"] as! String)
+                    
+                }
+                self.interestSelector.isVertical = true
+                self.interestSelector.items = self.interests_list
+            }
+        }
 
         // Do any additional setup after loading the view.
+
+        
     }
     
     @IBAction func cancel(_ sender: Any) {
@@ -51,6 +71,31 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
                 print("Save no work!")
             }
         })
+        
+        // Remove all current interests
+        let del_query = PFQuery(className: "UserInterests")
+        del_query.whereKey("user_id", equalTo: PFUser.current())
+        
+        del_query.findObjectsInBackground { objects, error in
+            if (error == nil) {
+                PFObject.deleteAll(inBackground: objects)
+                
+                // Save updated interests
+                let selectedIndices: IndexSet = self.interestSelector.selectedSegmentIndexes
+                for index in selectedIndices {
+                    var new_interest = PFObject(className: "UserInterests")
+                    new_interest["user_id"] = PFUser.current()
+                    new_interest["interest_id"] = self.interest_objs[index]
+                    new_interest.saveInBackground()
+                }
+                
+            }
+        }
+        
+
+        
+        
+        
         
         
 

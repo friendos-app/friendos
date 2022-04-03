@@ -127,8 +127,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AAFEE9D127E1814100A1AD9D /* Build configuration list for PBXNativeTarget "friendos" */;
 			buildPhases = (
-				AAFEE9D727E189F900A1AD9D /* Setup API plist file */,
 				774877FF6F33E56A58B65637 /* [CP] Check Pods Manifest.lock */,
+				AAFEE9D727E189F900A1AD9D /* Setup API plist file */,
 				AAFEE9B927E1813F00A1AD9D /* Sources */,
 				AAFEE9BA27E1813F00A1AD9D /* Frameworks */,
 				AAFEE9BB27E1813F00A1AD9D /* Resources */,

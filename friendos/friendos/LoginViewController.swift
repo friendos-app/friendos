@@ -24,6 +24,7 @@ class LoginViewController: UIViewController {
 
     }
     
+    
     // Check if user is logged in and segue to home screen if so
     override func viewDidAppear(_ animated: Bool) {
         if UserDefaults.standard.bool(forKey: "userLoggedIn") == true {
@@ -34,6 +35,10 @@ class LoginViewController: UIViewController {
             
             self.performSegue(withIdentifier: "goLoginHome", sender: self)
         }
+        
+        // if we didn't segue, make sure background color is correct
+        view.backgroundColor = UIColor(named: UserDefaults.standard.string(forKey: "background_color")!)
+        
     }
     
     // Sign up a new user and segue to the profile screen

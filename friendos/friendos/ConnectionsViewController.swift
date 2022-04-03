@@ -14,8 +14,21 @@ class ConnectionsViewController: UIViewController, UITableViewDataSource, UITabl
     
     
     var connectionRequests = [PFObject]()
+    // Holds current background color
+    var background_color = UIColor()
     
     @IBOutlet weak var connectionTableView: UITableView!
+    
+    // Update background colors
+    func updateColors() {
+        // Setup background color
+        if let background_color_string = UserDefaults.standard.string(forKey: "background_color") {
+            print(background_color_string)
+            self.background_color = UIColor(named: background_color_string)!
+            view.backgroundColor = self.background_color
+            connectionTableView.backgroundColor = self.background_color
+        }
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if self.connectionRequests.count == 0 {
@@ -29,6 +42,8 @@ class ConnectionsViewController: UIViewController, UITableViewDataSource, UITabl
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Get a cell to update
         let cell = connectionTableView.dequeueReusableCell(withIdentifier: "ConnectionCell") as! ConnectionCell
+        
+        cell.contentView.backgroundColor = self.background_color
         
         // Show message if no friend requests
         if self.connectionRequests.count == 0 {
@@ -62,6 +77,8 @@ class ConnectionsViewController: UIViewController, UITableViewDataSource, UITabl
         super.viewDidLoad()
         
         self.getConnections()
+        
+        updateColors()
 
         connectionTableView.dataSource = self
         connectionTableView.delegate = self
@@ -105,6 +122,13 @@ class ConnectionsViewController: UIViewController, UITableViewDataSource, UITabl
                 print("Error")
             }
         })
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        updateColors()
+        connectionTableView.reloadData()
     }
 
 }

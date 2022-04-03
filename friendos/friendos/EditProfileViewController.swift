@@ -21,9 +21,21 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     var interest_objs: [PFObject] = [PFObject]()
 
     
+    // Update background colors
+    func updateColors() {
+        // Setup background color
+        if let background_color_string = UserDefaults.standard.string(forKey: "background_color") {
+            print(background_color_string)
+            let background_color = UIColor(named: background_color_string)!
+            view.backgroundColor = background_color
+        }
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        updateColors()
         
         // Set up placeholder text color
         bioField.attributedPlaceholder = NSAttributedString(string: "Enter new bio here...", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
@@ -103,6 +115,11 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         
 
             
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        updateColors()
     }
     
     @IBAction func onCameraButton(_ sender: Any) {

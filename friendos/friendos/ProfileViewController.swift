@@ -22,6 +22,16 @@ class ProfileViewController: UIViewController {
     // user_list will just be a list with a single dictioary.
     var user_list = [PFObject]()
     
+    // Update background colors
+    func updateColors() {
+        // Setup background color
+        if let background_color_string = UserDefaults.standard.string(forKey: "background_color") {
+            print(background_color_string)
+            let background_color = UIColor(named: background_color_string)!
+            view.backgroundColor = background_color
+        }
+    }
+    
     func loadData() {
         // User is set to current logged in user.
         let user = PFUser.current()
@@ -99,6 +109,7 @@ class ProfileViewController: UIViewController {
         
         super.viewDidLoad()
         
+        updateColors()
         
         profilePhotoView.layer.borderWidth = 6
         bioView.layer.borderWidth = 6
@@ -120,6 +131,9 @@ class ProfileViewController: UIViewController {
         
         super.viewDidAppear(animated)
         //self.viewDidLoad()
+        
+        // update colors
+        updateColors()
         
         // Reload database data
         self.loadData()

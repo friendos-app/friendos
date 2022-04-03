@@ -8,7 +8,7 @@
 import UIKit
 import Parse
 
-class SettingsViewController: UIViewController, UIColorPickerViewControllerDelegate  {
+class SettingsViewController: UIViewController  {
 
     var cancellable: Any?
     let curUser = PFUser.current()
@@ -20,16 +20,7 @@ class SettingsViewController: UIViewController, UIColorPickerViewControllerDeleg
     }
     
     
-    @IBAction func onColorTouch(_ sender: Any) {
-        // Initialize the color picker
-        let picker = UIColorPickerViewController()
-        // Set up the initial color
-        picker.selectedColor = self.view.backgroundColor!
-        // Set up the delegate
-        picker.delegate = self
-        // Present the picker
-        self.present(picker, animated: true, completion: nil)
-    }
+
     
     // Copy referal link to clipboard
     @IBAction func onCopyTouch(_ sender: Any) {
@@ -46,44 +37,14 @@ class SettingsViewController: UIViewController, UIColorPickerViewControllerDeleg
         present(copiedAlert, animated: true, completion: nil)
         
     }
-    
-
-    
-    
-
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Set the referall link to the correct value
 
     }
-    
-    func colorPickerViewControllerDidFinish(_ viewController: UIColorPickerViewController) {
-        // Colors to hold background color
-        var red: CGFloat = 0
-        var green: CGFloat = 0
-        var blue: CGFloat = 0
-        var alpha: CGFloat = 0
-        
-        // Get the selected color
-        let color = viewController.selectedColor
-        color.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
-        
-        // Save the color to the DB
-        curUser?["background_color"] = "\(red)-\(green)-\(blue)-\(alpha)"
-        curUser?.saveInBackground()
-        
-        // Set background color
-//        self.view.backgroundColor = color
-    }
-    
-    func colorPickerViewControllerDidSelectColor(_ viewController: UIColorPickerViewController) {
-        print("Color changed")
-    }
-    
-    
-
-
-
 }
+
+// Save the color to the DB
+//curUser?["background_color"] = "\(red)-\(green)-\(blue)-\(alpha)"
+//curUser?.saveInBackground()

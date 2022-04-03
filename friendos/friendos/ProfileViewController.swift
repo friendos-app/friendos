@@ -45,7 +45,6 @@ class ProfileViewController: UIViewController {
             if (error == nil) {
                 if let cur_user_object = objects {
                     self.user_list = cur_user_object
-                    print("AHAHA = ", self.user_list)
                     
                     usernameLabel.text = user_list[0]["username"] as? String
                     userBio.text = user_list[0]["bio"] as? String
@@ -55,11 +54,6 @@ class ProfileViewController: UIViewController {
                         let url = URL(string: urlString)!
                         profilePhotoView.af.setImage(withURL: url)
                     }
-//                    let urlString = imageFile.url!
-//                    let url = URL(string: urlString)!
-//
-//                    cell.photoView.af.setImage(withURL: url)
-                    
                     
                 }
                 

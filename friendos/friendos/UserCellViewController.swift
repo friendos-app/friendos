@@ -68,6 +68,8 @@ class UserCellViewController: UIViewController {
         
         self.onSubmitButton.isHidden = self.friends
         
+        self.getInterests()
+        
         if let imageFile = user2?["image"] as? PFFileObject {
             let urlString = imageFile.url!
             let url = URL(string: urlString)!
@@ -114,11 +116,43 @@ class UserCellViewController: UIViewController {
     
         
         
+        
+        
         // Do any additional setup after loading the view.
 //        print(user[""])
     }
     
-
+    func getInterests() {
+        // Setup query for user interests
+        let interest_query = PFQuery(className: "UserInterests")
+        interest_query.includeKey("interest_id")
+        interest_query.whereKey("user_id", equalTo: self.user2)
+        
+        // Run query and populate interests section
+        interest_query.findObjectsInBackground { objects, error in
+            
+            if let interests = objects {
+                
+                var interest_list = ""
+                for interest in interests {
+                    let interest_obj = interest["interest_id"] as! PFObject
+                    let interest_str = interest_obj["interest"] as! String
+                    interest_list = interest_list + interest_str + ", "
+                    
+                }
+                if interest_list == "" {
+                    interest_list = "no current interests"
+                }
+                else {
+                    interest_list.removeLast(2)
+                }
+                interest_list = "Interests: " + interest_list
+                
+                self.interestsLabel.text = interest_list
+                
+            }
+        }
+    }
     /*
     // MARK: - Navigation
 

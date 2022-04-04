@@ -64,6 +64,12 @@ class LoginViewController: UIViewController {
         user["referal_link"] = "https://getfriendos.com/" + self.userNameText.text!
         user["background_color"] = "FriendosBlue"
         
+        
+        var image = UIImage(named: "image_placeholder")
+        let imageData = image!.pngData()!
+        let file = PFFileObject(name: "profileImage.png", data: imageData)
+        user["image"] = file
+        
         // Attempt to sign the user up
         user.signUpInBackground { success, error in
             if let error = error {

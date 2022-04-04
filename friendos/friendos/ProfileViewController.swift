@@ -8,16 +8,52 @@
 import UIKit
 import Parse
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    @IBOutlet weak var profilePhotoView: UIImageView!
+    @IBOutlet weak var tableView: UITableView!
     
-    @IBOutlet weak var bioView: UIView!
-    @IBOutlet weak var interestView: UIView!
-    @IBOutlet weak var usernameLabel: UILabel!
-    @IBOutlet weak var interestLabel: UILabel!
-    @IBOutlet weak var userBio: UILabel!
     
+    let user = PFUser.current()
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if (indexPath.row == 0) {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "profileCell") as! profileCell
+            
+            cell.usernameLabel.text = user?["username"] as! String
+            
+            cell.profilePhotoView.layer.borderWidth = 6
+            cell.bioView.layer.borderWidth = 6
+            cell.bioView.layer.borderColor = UIColor.black.cgColor
+            cell.interestView.layer.borderWidth = 6
+            cell.interestView.layer.borderColor = UIColor.black.cgColor
+            //userBio.layer.borderWidth = 6
+            
+            print()
+            
+            return cell
+        }
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "profileCell") as! profileCell
+        
+        cell.usernameLabel.text = user?["username"] as! String
+        
+        cell.profilePhotoView.layer.borderWidth = 6
+        cell.bioView.layer.borderWidth = 6
+        cell.bioView.layer.borderColor = UIColor.black.cgColor
+        cell.interestView.layer.borderWidth = 6
+        cell.interestView.layer.borderColor = UIColor.black.cgColor
+        //userBio.layer.borderWidth = 6
+        
+        return cell
+        
+    }
+    
+    
+
     
     // user_list will just be a list with a single dictioary.
     var user_list = [PFObject]()
@@ -56,14 +92,14 @@ class ProfileViewController: UIViewController {
                 if let cur_user_object = objects {
                     self.user_list = cur_user_object
                     
-                    usernameLabel.text = user_list[0]["username"] as? String
-                    userBio.text = user_list[0]["bio"] as? String
-                    
-                    if let imageFile = user?["image"] as? PFFileObject {
-                        let urlString = imageFile.url!
-                        let url = URL(string: urlString)!
-                        profilePhotoView.af.setImage(withURL: url)
-                    }
+//                    usernameLabel.text = user_list[0]["username"] as? String
+//                    userBio.text = user_list[0]["bio"] as? String
+//
+//                    if let imageFile = user?["image"] as? PFFileObject {
+//                        let urlString = imageFile.url!
+//                        let url = URL(string: urlString)!
+//                        profilePhotoView.af.setImage(withURL: url)
+//                    }
                     
                 }
                 
@@ -92,7 +128,7 @@ class ProfileViewController: UIViewController {
                         }
                         interest_list = "Interests: " + interest_list
                         
-                        interestLabel.text = interest_list
+                        //interestLabel.text = interest_list
                         
                     }
                 }
@@ -111,15 +147,13 @@ class ProfileViewController: UIViewController {
         
         updateColors()
         
-        profilePhotoView.layer.borderWidth = 6
-        bioView.layer.borderWidth = 6
-        bioView.layer.borderColor = UIColor.black.cgColor
-        interestView.layer.borderWidth = 6
-        interestView.layer.borderColor = UIColor.black.cgColor
-        //userBio.layer.borderWidth = 6
+      
         
         self.loadData()
         
+        
+        tableView.delegate = self
+        tableView.dataSource = self
         
         
         

@@ -10,6 +10,8 @@
 		92086F0EB603B8A5B2AAD664 /* Pods_friendos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13699A731704C2AABDB1082F /* Pods_friendos.framework */; };
 		AA32302427E929DD00CE307A /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA32302327E929DD00CE307A /* EditProfileViewController.swift */; };
 		AA5E48AD27EABBC30014745A /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5E48AC27EABBC30014745A /* UserCell.swift */; };
+		AA97161E27FA81D200892246 /* commentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA97161D27FA81D200892246 /* commentCell.swift */; };
+		AA97162027FA82CC00892246 /* profileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA97161F27FA82CC00892246 /* profileCell.swift */; };
 		AAFEE9C127E1813F00A1AD9D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFEE9C027E1813F00A1AD9D /* AppDelegate.swift */; };
 		AAFEE9C327E1813F00A1AD9D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFEE9C227E1813F00A1AD9D /* SceneDelegate.swift */; };
 		AAFEE9C827E1813F00A1AD9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAFEE9C627E1813F00A1AD9D /* Main.storyboard */; };
@@ -31,6 +33,8 @@
 		9E2DF336AB42E74CAFEEBD20 /* Pods-friendos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-friendos.debug.xcconfig"; path = "Target Support Files/Pods-friendos/Pods-friendos.debug.xcconfig"; sourceTree = "<group>"; };
 		AA32302327E929DD00CE307A /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		AA5E48AC27EABBC30014745A /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		AA97161D27FA81D200892246 /* commentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = commentCell.swift; sourceTree = "<group>"; };
+		AA97161F27FA82CC00892246 /* profileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profileCell.swift; sourceTree = "<group>"; };
 		AAFEE9BD27E1813F00A1AD9D /* friendos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = friendos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAFEE9C027E1813F00A1AD9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AAFEE9C227E1813F00A1AD9D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +112,8 @@
 				AD7F3D0E27EBBC41005D2A40 /* SettingsViewController.swift */,
 				AD95557327F5083B00CAC160 /* ConnectionCell.swift */,
 				AD95557527F5098B00CAC160 /* ConnectionsViewController.swift */,
+				AA97161D27FA81D200892246 /* commentCell.swift */,
+				AA97161F27FA82CC00892246 /* profileCell.swift */,
 			);
 			path = friendos;
 			sourceTree = "<group>";
@@ -255,9 +261,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA97162027FA82CC00892246 /* profileCell.swift in Sources */,
 				AD9A364727E28AB30072BC5F /* LoginViewController.swift in Sources */,
 				AAFEE9C127E1813F00A1AD9D /* AppDelegate.swift in Sources */,
 				AD95557627F5098B00CAC160 /* ConnectionsViewController.swift in Sources */,
+				AA97161E27FA81D200892246 /* commentCell.swift in Sources */,
 				AA32302427E929DD00CE307A /* EditProfileViewController.swift in Sources */,
 				AD9A364B27E28ECC0072BC5F /* ProfileViewController.swift in Sources */,
 				E78C695727EE2EF200DB36D1 /* UserCellViewController.swift in Sources */,

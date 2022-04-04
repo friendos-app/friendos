@@ -22,6 +22,7 @@ class LoginViewController: UIViewController {
             view.backgroundColor = UIColor(named: background_color)
         } else {
             UserDefaults.standard.set("FriendosBlue", forKey: "background_color")
+            view.backgroundColor = UIColor(named: "FriendosBlue")
         }
 
     }
@@ -30,10 +31,15 @@ class LoginViewController: UIViewController {
     // Check if user is logged in and segue to home screen if so
     override func viewDidAppear(_ animated: Bool) {
         if UserDefaults.standard.bool(forKey: "userLoggedIn") == true {
-            
             // Set up background color
             let user = PFUser.current()
-            UserDefaults.standard.set("FriendosBlue", forKey: "background_color")
+            
+            let cur_background = UserDefaults.standard.string(forKey: "background_color")
+            
+            if cur_background == nil {
+                UserDefaults.standard.set("FriendosBlue", forKey: "background_color")
+            }
+            
             
             self.performSegue(withIdentifier: "goLoginHome", sender: self)
         }

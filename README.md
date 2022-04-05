@@ -32,40 +32,48 @@ Creates a profile for a user based on hobbies they enjoy, and connects them with
 
 User story demonstration for log in and sign up:
 
-<img src="http://g.recordit.co/UMb6JVRIjx.gif">
+<img src="http://g.recordit.co/UeLejd9SCn.gif">
 
-- [ ] User can edit profile screen, including adding interest and a bio
+- [x] User can edit profile screen, including adding interest and a bio
 - [x] User can view their own bio
 
-Demo of user viewing bio
+Demo of user viewing bio and editing bio, profile picture, and images
 
-<img src="http://g.recordit.co/s3xBmkVi13.gif">
+<img src="http://g.recordit.co/Qq06EgQ7Xg.gif">
 
 - [x] User can see a list of people using the app
-
-User story for home screen list of users (still working on photograph uploads)
-
-<img src="http://g.recordit.co/R7DyzxCCcC.gif">
-
-- [ ]  User can view an individual person's profile, including bio and interests
+- [x]  User can view an individual person's profile, including bio and interests
 - [ ]  User can add comments to a person's profile
+
+Demo of browser users and viewing individual profile
+
+<img src="http://g.recordit.co/Zgpa1cBB2H.gif">
 
 ### Tier 2
 
 - [ ]  User can add new interests to their list
 - [ ]  User can add a location to their profile
-- [ ] User can connect with another individual
+- [x] User can connect with another individual
+
+Demo of browsing users and making a connection requests
+
+<img src="http://g.recordit.co/Zgpa1cBB2H.gif">
 
 User accepting and rejecting connections
 
-<img src="http://g.recordit.co/jpq2HP0iCJ.gif">
+<img src="http://g.recordit.co/CferJUA0h7.gif">
 
-- [ ] User can edit the background color of their profile
+- [x] User can edit the background color of their profile
+
+User story demo for changing background color
+
+<img src="http://g.recordit.co/yVoElQ4SBA.gif">
+
 - [x] User can send a referral link to others to invite them to join Friendos
 
 User story demo for referral links:
 
-<img src="http://g.recordit.co/n5TRqrjuSi.gif">
+<img src="http://g.recordit.co/4JP9eb3UBp.gif">
 
 **Optional Nice-to-have Stories**
 ### Tier 3

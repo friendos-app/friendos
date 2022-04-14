@@ -1,6 +1,3 @@
-Unit 8: Group Milestone - README
-===
-
 # FRIENDOS
 
 ## Table of Contents
